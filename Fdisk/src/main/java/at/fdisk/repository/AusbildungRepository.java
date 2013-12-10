@@ -5,7 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import at.fdisk.domain.Ausbildung;
 
-public interface AusbildungRepository extends CrudRepository<Ausbildung, Long> {
+public interface AusbildungRepository extends AusbildungRepositoryCustom,
+		CrudRepository<Ausbildung, Long> {
 
 	List<Ausbildung> findAll();
 

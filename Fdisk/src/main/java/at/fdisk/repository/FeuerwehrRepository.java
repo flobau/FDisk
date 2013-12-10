@@ -5,13 +5,11 @@ import org.springframework.data.repository.CrudRepository;
 
 import at.fdisk.domain.Feuerwehr;
 
-
-public interface FeuerwehrRepository extends CrudRepository<Feuerwehr, Long>{
-
-
+public interface FeuerwehrRepository extends FeuerwehrRepositoryCustom,
+		CrudRepository<Feuerwehr, Long> {
 
 	public List<Feuerwehr> findAll();
 
 	public Feuerwehr findById(Long id);
-	
+
 }

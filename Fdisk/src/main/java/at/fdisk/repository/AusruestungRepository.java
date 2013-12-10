@@ -5,7 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import at.fdisk.domain.Ausruestung;
 
-public interface AusruestungRepository extends CrudRepository<Ausruestung, Long> {
+public interface AusruestungRepository extends AusruestungRepositoryCustom,
+		CrudRepository<Ausruestung, Long> {
 
 	List<Ausruestung> findAll();
 

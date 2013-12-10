@@ -5,7 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import at.fdisk.domain.Feuerwehrauto;
 
-public interface FeuerwehrautoRepository extends CrudRepository<Feuerwehrauto, Long>{
+public interface FeuerwehrautoRepository extends FeuerwehrautoRepositoryCustom,
+		CrudRepository<Feuerwehrauto, Long> {
 
 	List<Feuerwehrauto> findAll();
 
