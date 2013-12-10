@@ -20,17 +20,17 @@ public class Berechtigung extends BasePersistable {
 	
 	@Size(max = 30)
 	@NotNull
-	@Column(name = "berechtigung", nullable = false, length = 30)
-	private String berechtigung;
+	@Column(name = "berechtigungName", nullable = false, length = 30)
+	private String berechtigungName;
 	
 	@OneToMany
 	private Collection<User> berechtigte;
 
-	public Berechtigung(String berechtigung, Collection<User> berechtigte) {
+	public Berechtigung(String berechtigungName, Collection<User> berechtigte) {
 		super();
-		EnsureService.notEmpty("berechtigung", berechtigung);
-		EnsureService.notNull("berechtigung", berechtigte);
-		this.berechtigung = berechtigung;
+		EnsureService.notEmpty("berechtigungName", berechtigungName);
+		EnsureService.notNull("berechtigte", berechtigte);
+		this.berechtigungName = berechtigungName;
 		this.berechtigte = berechtigte;
 	}
 	
@@ -39,11 +39,11 @@ public class Berechtigung extends BasePersistable {
 	}
 
 	public String getBerechtigung() {
-		return berechtigung;
+		return berechtigungName;
 	}
 
 	public void setBerechtigung(String berechtigung) {
-		this.berechtigung = berechtigung;
+		this.berechtigungName = berechtigung;
 	}
 	
 	public Collection<User> getBerechtigte() {

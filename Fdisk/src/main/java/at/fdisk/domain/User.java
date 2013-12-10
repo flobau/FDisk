@@ -22,7 +22,7 @@ public class User extends BasePersistable{
 	
 	@Size(max = 15)
 	@NotNull
-	@Column(name = "username", nullable = false, length = 15)
+	@Column(name = "username", nullable = false, length = 15, unique = true)
 	private String username;
 	
 	@Size(max = 15)

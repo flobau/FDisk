@@ -2,8 +2,11 @@ package at.fdisk.repository;
 
 import java.util.List;
 
+import at.fdisk.domain.Berechtigung;
 import at.fdisk.domain.User;
 
 public interface UserRepositoryCustom {
-	List<User> findWithQueryDsl(String building);
+	List<User> findByUsername(String username);
+	List<User> findByPasswort(String passwort);
+	List<User> findByBerechtigung(Berechtigung berechtigung);
 }
