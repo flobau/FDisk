@@ -1,16 +1,12 @@
-/*
- * Jumio Inc.
- *
- * Copyright (C) 2010 - 2011
- * All rights reserved.
- */
 package at.fdisk.repositoryjpa;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

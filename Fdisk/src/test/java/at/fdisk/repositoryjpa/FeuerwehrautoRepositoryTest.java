@@ -1,28 +1,30 @@
-package at.fdisk.repository;
+package at.fdisk.repositoryjpa;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.util.Assert;
 
+import at.fdisk.domain.Feuerwehr;
 import at.fdisk.domain.Feuerwehrauto;
 import at.fdisk.domain.Geraet;
-import at.fdisk.repository.GeraetRepository;
+import at.fdisk.repository.FeuerwehrautoRepository;
 
 
-public class GeraetRepositoryTest {
+public class FeuerwehrautoRepositoryTest {
 
 	@Test
 	public void testMe() {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(
 				RepositoryTestConfiguration.class);
-		GeraetRepository repository = context.getBean(GeraetRepository.class);
-		repository.save(new Geraet("S", new Date(), new Feuerwehrauto()));
+		FeuerwehrautoRepository repository = context.getBean(FeuerwehrautoRepository.class);
+		repository.save(new Feuerwehrauto("A", 1, new Feuerwehr(),
+				new ArrayList<Geraet>()));
 
-		Geraet geraet = repository.findById((long) 1);
-		Assert.notNull(geraet);
+		Feuerwehrauto feuerwehrauto = repository.findById((long) 1);
+		Assert.notNull(feuerwehrauto);
 		context.close();
 	}
 }

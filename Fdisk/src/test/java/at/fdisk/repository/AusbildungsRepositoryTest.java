@@ -16,7 +16,7 @@ import org.springframework.util.Assert;
 import at.fdisk.domain.Ausbildung;
 import at.fdisk.domain.Feuerwehr;
 import at.fdisk.repository.AusbildungRepository;
-import at.fdisk.repository.RepositoryTestConfiguration;
+import at.fdisk.repositoryjpa.RepositoryTestConfiguration;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
 public class AusbildungsRepositoryTest extends AbstractJUnit4SpringContextTests {

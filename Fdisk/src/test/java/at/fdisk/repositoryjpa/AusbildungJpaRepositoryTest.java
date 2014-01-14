@@ -8,8 +8,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.Date;
 
-
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import at.fdisk.domain.Ausbildung;

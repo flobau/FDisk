@@ -1,4 +1,4 @@
-package at.fdisk.repository;
+package at.fdisk.repositoryjpa;
 
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;

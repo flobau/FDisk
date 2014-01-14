@@ -5,6 +5,7 @@ import java.util.Date;
 import at.fdisk.domain.Ausruestung;
 import at.fdisk.domain.Mitglied;
 import at.fdisk.repository.AusruestungRepository;
+import at.fdisk.repositoryjpa.RepositoryTestConfiguration;
 
 import com.mysema.query.jpa.impl.JPAQuery;
 
@@ -12,6 +13,7 @@ import at.fdisk.domain.QAusruestung;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
