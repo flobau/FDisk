@@ -12,7 +12,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import at.fdisk.domain.DomainConfiguration;
 import at.fdisk.repository.RepositoryConfiguration;
 
-
 @Configuration
 @Import({ DomainConfiguration.class, RepositoryConfiguration.class })
 public class RepositoryTestConfiguration {

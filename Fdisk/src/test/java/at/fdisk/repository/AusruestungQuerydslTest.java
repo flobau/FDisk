@@ -42,7 +42,7 @@ public class AusruestungQuerydslTest extends AbstractJUnit4SpringContextTests {
 
         // when
         JPAQuery query = new JPAQuery(entityManager);
-        QAusruestung ausruestung = new QAusruestung("ausruestung");
+        QAusruestung ausruestung = QAusruestung.ausruestung;
         query.from(ausruestung).
                 where(ausruestung.bezeichnung.eq("Jacke")).
                 orderBy(ausruestung.ausgegeben.asc());
