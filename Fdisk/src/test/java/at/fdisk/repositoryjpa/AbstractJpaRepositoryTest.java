@@ -6,7 +6,6 @@ import javax.persistence.Persistence;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

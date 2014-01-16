@@ -107,6 +107,11 @@
 			<version>3.2.5.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.perf4j</groupId>
+			<artifactId>perf4j</artifactId>
+			<version>0.9.16</version>
+		</dependency>
 	</dependencies>
 
 	<properties>

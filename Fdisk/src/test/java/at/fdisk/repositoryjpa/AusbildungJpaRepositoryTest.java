@@ -9,7 +9,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import java.util.Date;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import at.fdisk.domain.Ausbildung;
@@ -73,9 +72,6 @@ public class AusbildungJpaRepositoryTest extends AbstractJpaRepositoryTest {
 		ausbildungJpaRepository.persist(ausbildung);
 		assertThat(ausbildung.getId(), is(notNullValue()));
 		Long newId = ausbildung.getId();
-
-		logger.info("Created Ausbildung with id: {} - teacher: {}", newId,
-				ausbildung);
 
 		Ausbildung ausbildungByFind = ausbildungJpaRepository.findById(newId);
 		assertThat(ausbildungByFind, equalTo(ausbildung));
