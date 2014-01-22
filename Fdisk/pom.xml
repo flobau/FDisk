@@ -112,13 +112,8 @@
 			<artifactId>perf4j</artifactId>
 			<version>0.9.16</version>
 		</dependency>
-		<dependency>
-			<groupId>javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.12.1.GA</version>
-		</dependency>
 	</dependencies>
-	
+
 	<properties>
 		<jdk.version>1.7</jdk.version>
 		<jacoco.version>0.6.3.201306030806</jacoco.version>

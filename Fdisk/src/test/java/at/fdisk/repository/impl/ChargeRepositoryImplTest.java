@@ -22,8 +22,7 @@ import at.fdisk.repository.ChargeRepository;
 import at.fdisk.repositoryjpa.RepositoryTestConfiguration;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
-public class ChargeRepositoryImplTest extends
-		AbstractJUnit4SpringContextTests {
+public class ChargeRepositoryImplTest extends AbstractJUnit4SpringContextTests {
 
 	@PersistenceContext
 	EntityManager entityManager;
@@ -38,16 +37,19 @@ public class ChargeRepositoryImplTest extends
 
 	@Test
 	public void testFindByFachgebiet() {
-		Charge c1 = new Charge("Stefan","Reinprecht","Kind",new Date(),"Wien",new Feuerwehr(),"Kind",new ArrayList<Ausruestung>(),new ArrayList<Ausbildung>());
-		Charge c2 = new Charge("Flo","Bauernhofer","Mensch",new Date(),"Wien",new Feuerwehr(),"Kind",new ArrayList<Ausruestung>(),new ArrayList<Ausbildung>());
+		Charge c1 = new Charge("Stefan", "Reinprecht", "FM", new Date(),
+				"Autos", new Feuerwehr(), "Au", new ArrayList<Ausruestung>(),
+				new ArrayList<Ausbildung>());
+		Charge c2 = new Charge("Flo", "Bauernhofer", "FM", new Date(),
+				"Gewand", new Feuerwehr(), "Ge", new ArrayList<Ausruestung>(),
+				new ArrayList<Ausbildung>());
 		chargeRepository.save(c1);
 		chargeRepository.save(c2);
-		List<Charge> charge = chargeRepository
-				.findByFachgebiet(c1.getFachgebiet());
+		List<Charge> charge = chargeRepository.findByFachgebiet(c1
+				.getFachgebiet());
 
 		Assert.assertNotNull(charge);
 		Assert.assertEquals(charge.size(), 1);
-		Assert.assertEquals(charge.get(0).getFachgebiet(),
-				c1.getFachgebiet());
+		Assert.assertEquals(charge.get(0).getFachgebiet(), c1.getFachgebiet());
 	}
 }
