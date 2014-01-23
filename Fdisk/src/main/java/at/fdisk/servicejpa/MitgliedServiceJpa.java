@@ -3,6 +3,7 @@ package at.fdisk.servicejpa;
 import java.util.Collection;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import at.fdisk.domain.Ausbildung;
@@ -16,6 +17,7 @@ import at.fdisk.repositoryjpa.MitgliedJpaRepository;
 @Service
 public class MitgliedServiceJpa {
 
+	@Autowired
 	private MitgliedJpaRepository mitgliedJpaRepository;
 	
 	public void createNewMitglied(String vorname, String nachname, String dienstgrad,
@@ -24,5 +26,9 @@ public class MitgliedServiceJpa {
 		Mitglied mitglied = new Mitglied(vorname, nachname, dienstgrad, geburtsdatum,
 				wohnort, feuerwehr, ausruestungen, ausbildung);
 		mitgliedJpaRepository.persist(mitglied);
+	}
+	
+	public void setMitgliedJpaReposiotry (MitgliedJpaRepository mitgliedJpaRepository){
+		this.mitgliedJpaRepository = mitgliedJpaRepository;
 	}
 }

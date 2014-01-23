@@ -12,7 +12,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import at.fdisk.util.EnsureService;
+import at.fdisk.EnsureService;
 
 /**
  * User: Stefan Date: 12.09.13 Time: 17:45

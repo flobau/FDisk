@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import at.fdisk.util.EnsureService;
+import at.fdisk.EnsureService;
 
 @Entity
 @Table(name = "charge")

@@ -1,4 +1,4 @@
-package at.fdisk.util;
+package at.fdisk;
 
 public class EnsureService {
 
