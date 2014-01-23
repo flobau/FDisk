@@ -1,4 +1,4 @@
-package at.fdisk.core.events.impl;
+package at.fdisk.core.events.ausbildung;
 
 import at.fdisk.core.events.RequestReadEvent;
 

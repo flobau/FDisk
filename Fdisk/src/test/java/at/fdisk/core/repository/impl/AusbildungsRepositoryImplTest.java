@@ -1,7 +1,6 @@
 package at.fdisk.core.repository.impl;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -44,12 +43,11 @@ public class AusbildungsRepositoryImplTest extends
 		ausbildungRepository.save(a1);
 		ausbildungRepository.save(a2);
 		ausbildungRepository.save(a3);
-		List<Ausbildung> ausbildung = ausbildungRepository.findByBezeichnung(a1
+		Ausbildung ausbildung = ausbildungRepository.findByBezeichnung(a1
 				.getBezeichnung());
 
 		Assert.assertNotNull(ausbildung);
-		Assert.assertEquals(ausbildung.size(), 1);
-		Assert.assertEquals(ausbildung.get(0), a1);
+		Assert.assertEquals(ausbildung, a1);
 	}
 
 	@Test
@@ -63,11 +61,10 @@ public class AusbildungsRepositoryImplTest extends
 		ausbildungRepository.save(a1);
 		ausbildungRepository.save(a2);
 		ausbildungRepository.save(a3);
-		List<Ausbildung> ausbildung = ausbildungRepository
-				.findByKurzbezeichnung(a2.getKurz_bezeichnung());
+		Ausbildung ausbildung = ausbildungRepository.findByKurzbezeichnung(a2
+				.getKurz_bezeichnung());
 
 		Assert.assertNotNull(ausbildung);
-		Assert.assertEquals(ausbildung.size(), 1);
-		Assert.assertEquals(ausbildung.get(0), a2);
+		Assert.assertEquals(ausbildung, a2);
 	}
 }

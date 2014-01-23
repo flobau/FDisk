@@ -18,20 +18,20 @@ public class AusbildungRepositoryImpl implements AusbildungRepositoryCustom {
 	EntityManager entityManager;
 
 	@Override
-	public List<Ausbildung> findByBezeichnung(String bezeichnung) {
+	public Ausbildung findByBezeichnung(String bezeichnung) {
 		JPAQuery query = new JPAQuery(entityManager);
 		QAusbildung ausbildung = QAusbildung.ausbildung;
 		query.from(ausbildung).where(ausbildung.bezeichnung.eq(bezeichnung));
-		return query.list(ausbildung);
+		return query.singleResult(ausbildung);
 	}
 
 	@Override
-	public List<Ausbildung> findByKurzbezeichnung(String kurzbezeichnung) {
+	public Ausbildung findByKurzbezeichnung(String kurzbezeichnung) {
 		JPAQuery query = new JPAQuery(entityManager);
 		QAusbildung ausbildung = QAusbildung.ausbildung;
 		query.from(ausbildung).where(
 				ausbildung.kurzBezeichnung.eq(kurzbezeichnung));
-		return query.list(ausbildung);
+		return query.singleResult(ausbildung);
 	}
 
 	@Override
