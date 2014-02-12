@@ -15,7 +15,6 @@ import javax.validation.constraints.Size;
 import org.springframework.beans.BeanUtils;
 
 import at.fdisk.core.EnsureService;
-import at.fdisk.core.events.ausbildung.AusbildungDetails;
 
 @Entity
 @Table(name = "ausbildung")
@@ -117,28 +116,5 @@ public class Ausbildung extends BasePersistable {
 
 	public void setEnddatum(Date enddatum) {
 		this.enddatum = enddatum;
-	}
-
-	public AusbildungDetails toAusbildungDetails() {
-		AusbildungDetails details = new AusbildungDetails();
-		BeanUtils.copyProperties(this, details);
-		return details;
-	}
-
-	public static Ausbildung fromOrderDetails(
-			AusbildungDetails ausbildungDetails) {
-		Ausbildung ausbildung = new Ausbildung(
-				ausbildungDetails.getBezeichnung(),
-				ausbildungDetails.getKurz_bezeichnung(),
-				ausbildungDetails.getStartdatum(),
-				ausbildungDetails.getEnddatum());
-
-		BeanUtils.copyProperties(ausbildungDetails, ausbildung);
-
-		return ausbildung;
-	}
-
-	public boolean canBeDeleted() {
-		return true;
 	}
 }

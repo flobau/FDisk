@@ -1,43 +1,26 @@
 package at.fdisk.core.domain;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
+
 import java.util.ArrayList;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import at.fdisk.core.domain.Berechtigung;
 import at.fdisk.core.domain.Mitglied;
 import at.fdisk.core.domain.User;
 
-public class UserTest {
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
-
-	@Before
-	public void setup() {
-		entityManagerFactory = Persistence.createEntityManagerFactory("fdisk");
-		entityManager = entityManagerFactory.createEntityManager();
-		entityManager.getTransaction().begin();
-	}
-
-	@After
-	public void teardown() {
-		if (entityManager != null)
-			entityManager.getTransaction().commit();
-		if (entityManager != null)
-			entityManager.close();
-		if (entityManagerFactory != null)
-			entityManagerFactory.close();
-	}
+public class UserTest extends AbstractDomainPersistenceTest {
 
 	@Test
 	public void testMe() {
-		User u = new User("S", "*", new ArrayList<Berechtigung>(), new Mitglied());
-		entityManager.persist(u);
+		User u = new User("S", "*", new ArrayList<Berechtigung>(),
+				new Mitglied());
+		assertThat(u.getId(), is(nullValue()));
+		entityManager().persist(u);
+		assertThat(u.getId(), is(notNullValue()));
 	}
 }

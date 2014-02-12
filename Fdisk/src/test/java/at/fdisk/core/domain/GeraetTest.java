@@ -1,42 +1,23 @@
 package at.fdisk.core.domain;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
+
 import java.util.Date;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.domain.Geraet;
 
-public class GeraetTest {
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
-
-	@Before
-	public void setup() {
-		entityManagerFactory = Persistence.createEntityManagerFactory("fdisk");
-		entityManager = entityManagerFactory.createEntityManager();
-		entityManager.getTransaction().begin();
-	}
-
-	@After
-	public void teardown() {
-		if (entityManager != null)
-			entityManager.getTransaction().commit();
-		if (entityManager != null)
-			entityManager.close();
-		if (entityManagerFactory != null)
-			entityManagerFactory.close();
-	}
-
+public class GeraetTest extends AbstractDomainPersistenceTest{
 	@Test
 	public void testMe() {
 		Geraet g = new Geraet("S", new Date(), new Feuerwehrauto());
-		entityManager.persist(g);
+		assertThat(g.getId(), is(nullValue()));
+		entityManager().persist(g);
+		assertThat(g.getId(), is(notNullValue()));
 	}
 }
