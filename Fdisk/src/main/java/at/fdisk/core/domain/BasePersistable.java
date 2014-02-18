@@ -1,6 +1,7 @@
 package at.fdisk.core.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,8 @@ public abstract class BasePersistable implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Long id;
+	
+	private Date updateDate;
 
 	public Long getId() {
 		return this.id;

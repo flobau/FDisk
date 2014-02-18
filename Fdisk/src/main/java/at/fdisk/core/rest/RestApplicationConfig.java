@@ -1,21 +1,20 @@
-package at.fdisk.core.service;
+package at.fdisk.core.rest;
 
 import at.fdisk.core.domain.DomainConfiguration;
 import at.fdisk.core.repository.RepositoryConfiguration;
+import at.fdisk.core.service.ServiceConfiguration;
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-/**
- * To combine all configurations from main that are required to execute test on layer of service. Additionally H2
- * database is used as datasource at testing.
- */
+@Import(value = {DomainConfiguration.class, RepositoryConfiguration.class, ServiceConfiguration.class})
 @Configuration
-@Import({DomainConfiguration.class, RepositoryConfiguration.class, ServiceConfiguration.class})
-public class ServiceTestConfiguration {
+@ComponentScan(basePackageClasses = RestPackage.class)
+public class RestApplicationConfig {
 
     @Bean
     public DataSource dataSource() {

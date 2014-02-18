@@ -1,8 +1,11 @@
 package at.fdisk.core.domain;
 
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
@@ -33,4 +36,11 @@ public class DomainConfiguration {
 		lef.setPackagesToScan(DomainPackage.class.getPackage().getName());
 		return lef;
 	}
+	
+	@Bean
+    public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+        JpaTransactionManager jtm = new JpaTransactionManager();
+        jtm.setEntityManagerFactory(entityManagerFactory);
+        return jtm;
+    }
 }
