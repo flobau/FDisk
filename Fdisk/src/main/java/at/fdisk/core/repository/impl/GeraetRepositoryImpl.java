@@ -10,7 +10,7 @@ import com.mysema.query.jpa.impl.JPAQuery;
 
 import at.fdisk.core.domain.Geraet;
 import at.fdisk.core.repository.GeraetRepositoryCustom;
-import at.fdisk.domain.QGeraet;
+import at.fdisk.core.domain.QGeraet;
 
 public class GeraetRepositoryImpl implements GeraetRepositoryCustom {
 

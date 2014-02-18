@@ -10,7 +10,7 @@ import com.mysema.query.jpa.impl.JPAQuery;
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.domain.Geraet;
 import at.fdisk.core.repository.FeuerwehrautoRepositoryCustom;
-import at.fdisk.domain.QFeuerwehrauto;
+import at.fdisk.core.domain.QFeuerwehrauto;
 
 public class FeuerwehrautoRepositoryImpl implements
 		FeuerwehrautoRepositoryCustom {

@@ -10,7 +10,7 @@ import com.mysema.query.jpa.impl.JPAQuery;
 import at.fdisk.core.domain.Berechtigung;
 import at.fdisk.core.domain.User;
 import at.fdisk.core.repository.BerechtigungRepositoryCustom;
-import at.fdisk.domain.QBerechtigung;
+import at.fdisk.core.domain.QBerechtigung;
 
 public class BerechtigungRepositoryImpl implements BerechtigungRepositoryCustom {
 

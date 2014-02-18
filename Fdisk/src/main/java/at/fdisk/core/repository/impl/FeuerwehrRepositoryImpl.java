@@ -11,7 +11,7 @@ import at.fdisk.core.domain.Ausbildung;
 import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.repository.FeuerwehrRepositoryCustom;
-import at.fdisk.domain.QFeuerwehr;
+import at.fdisk.core.domain.QFeuerwehr;
 
 public class FeuerwehrRepositoryImpl implements FeuerwehrRepositoryCustom {
 

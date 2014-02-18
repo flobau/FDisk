@@ -10,7 +10,7 @@ import com.mysema.query.jpa.impl.JPAQuery;
 
 import at.fdisk.core.domain.Ausbildung;
 import at.fdisk.core.repository.AusbildungRepositoryCustom;
-import at.fdisk.domain.QAusbildung;
+import at.fdisk.core.domain.QAusbildung;
 
 public class AusbildungRepositoryImpl implements AusbildungRepositoryCustom {
 

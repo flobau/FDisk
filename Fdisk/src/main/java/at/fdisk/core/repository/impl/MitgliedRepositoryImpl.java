@@ -12,7 +12,7 @@ import at.fdisk.core.domain.Ausbildung;
 import at.fdisk.core.domain.Ausruestung;
 import at.fdisk.core.domain.Mitglied;
 import at.fdisk.core.repository.MitgliedRepositoryCustom;
-import at.fdisk.domain.QMitglied;
+import at.fdisk.core.domain.QMitglied;
 
 public class MitgliedRepositoryImpl implements MitgliedRepositoryCustom {
 

@@ -12,7 +12,7 @@ import at.fdisk.core.domain.Ausbildung;
 import at.fdisk.core.domain.Ausruestung;
 import at.fdisk.core.domain.Charge;
 import at.fdisk.core.repository.ChargeRepositoryCustom;
-import at.fdisk.domain.QCharge;
+import at.fdisk.core.domain.QCharge;
 
 public class ChargeRepositoryImpl implements ChargeRepositoryCustom {
 

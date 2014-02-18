@@ -10,7 +10,7 @@ import com.mysema.query.jpa.impl.JPAQuery;
 
 import at.fdisk.core.domain.Ausruestung;
 import at.fdisk.core.repository.AusruestungRepositoryCustom;
-import at.fdisk.domain.QAusruestung;
+import at.fdisk.core.domain.QAusruestung;
 
 public class AusruestungRepositoryImpl implements AusruestungRepositoryCustom {
 
