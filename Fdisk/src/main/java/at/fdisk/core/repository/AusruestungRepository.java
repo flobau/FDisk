@@ -7,7 +7,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import at.fdisk.core.domain.Ausruestung;
 
-@RestResource(path="/ausrüstungen")
+@RestResource(path="/ausruestungen")
 public interface AusruestungRepository extends AusruestungRepositoryCustom,
 		CrudRepository<Ausruestung, Long> {
 

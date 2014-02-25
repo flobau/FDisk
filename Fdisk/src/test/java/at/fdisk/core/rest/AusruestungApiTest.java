@@ -1,5 +1,10 @@
 package at.fdisk.core.rest;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -12,39 +17,32 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
-
-/**
- *
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(loader = AnnotationConfigWebContextLoader.class, classes = RestApplicationConfig.class)
 @WebAppConfiguration
-public class AusbildungApiTest {
+public class AusruestungApiTest {
+
 	@Resource
 	private WebApplicationContext webApplicationContext;
 
 	@Test
-	public void readFromEmptyListOfAusbildungen() throws Exception {
+	public void readFromEmptyListOfAusruestungen() throws Exception {
 
 		MockMvc mockMvc = webAppContextSetup(webApplicationContext).build();
 
-		mockMvc.perform(get("/ausbildungen")).andExpect(status().isOk());
+		mockMvc.perform(get("/ausruestungen")).andExpect(status().isOk());
 	}
 
 	@Test
-	public void insertNewAusbildung() throws Exception {
+	public void insertNewAusruestung() throws Exception {
 
 		MockMvc mockMvc = webAppContextSetup(webApplicationContext).build();
 
 		mockMvc.perform(
-				post("/ausbildungen")
+				post("/ausruestungen")
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(
-								"{\"startdatum\":\"2014-01-01\", \"kurzBezeichnung\":\"AS\", \"bezeichnung\":\"Atemschutz\", \"enddatum\":\"2014-01-02\"}"))
+								"{\"bezeichnung\":\"Handschuh\", \"benutzer\":\"\", \"ausgegeben\":\"2014-01-02\"}"))
 				.andExpect(status().isCreated());
 	}
 }
