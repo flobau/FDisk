@@ -1,6 +1,5 @@
 package at.fdisk.core.rest;
 
-import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -15,7 +14,7 @@ public class RestWebApplicationInitializer extends AbstractAnnotationConfigDispa
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{RepositoryRestMvcConfiguration.class};
+    	return new Class<?>[]{RestWebConfiguration.class};
     }
 
     @Override
