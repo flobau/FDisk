@@ -34,6 +34,12 @@ public class Berechtigung extends BasePersistable {
 		this.berechtigte = berechtigte;
 	}
 	
+	public Berechtigung(String berechtigungName){
+		super();
+		EnsureService.notEmpty("berechtigungName", berechtigungName);
+		this.berechtigungName = berechtigungName;
+	}
+	
 	public Berechtigung() {
 		//for jpa
 	}

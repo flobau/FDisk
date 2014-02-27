@@ -86,6 +86,21 @@ public class Mitglied extends BasePersistable {
 		this.ausruestungen = ausruestungen;
 		this.ausbildung = ausbildung;
 	}
+	
+	public Mitglied(String vorname, String nachname, String dienstgrad,
+			Date geburtsdatum, String wohnort) {
+		super();
+		EnsureService.notEmpty("vorname", vorname);
+		EnsureService.notEmpty("nachname", nachname);
+		EnsureService.notEmpty("dienstgrad", dienstgrad);
+		EnsureService.notNull("geburtsdatum", geburtsdatum);
+		EnsureService.notEmpty("wohnort", wohnort);
+		this.vorname = vorname;
+		this.nachname = nachname;
+		this.dienstgrad = dienstgrad;
+		this.geburtsdatum = geburtsdatum;
+		this.wohnort = wohnort;
+	}
 
 	public String getVorname() {
 		return vorname;

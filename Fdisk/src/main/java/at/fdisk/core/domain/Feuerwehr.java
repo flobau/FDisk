@@ -46,10 +46,6 @@ public class Feuerwehr extends BasePersistable {
 	@OneToMany
 	private Collection<Ausbildung> ausbildungen;
 
-	public Feuerwehr() {
-		//for jpa
-	}
-
 	public Feuerwehr(String ort, Collection<Mitglied> mitglieder,
 			Collection<Charge> chargen, Mitglied kommandant,
 			Collection<Feuerwehrauto> autos, Collection<Ausbildung> ausbildungen) {
@@ -67,7 +63,17 @@ public class Feuerwehr extends BasePersistable {
 		this.autos = autos;
 		this.ausbildungen = ausbildungen;
 	}
+	
+	public Feuerwehr(String ort){
+		super();
+		EnsureService.notEmpty("ort", ort);
+		this.ort = ort;		
+	}
 
+	public Feuerwehr() {
+		//for jpa
+	}
+	
 	public String getOrt() {
 		return ort;
 	}

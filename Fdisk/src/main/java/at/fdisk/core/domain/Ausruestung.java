@@ -45,6 +45,14 @@ public class Ausruestung  extends BasePersistable {
 		this.benutzer = benutzer;
 		this.ausgegeben = ausgegeben;
 	}
+	
+	public Ausruestung(String bezeichnung, Date ausgegeben){
+		super();
+		EnsureService.notEmpty("bezeichnung", bezeichnung);
+		EnsureService.notNull("ausgegeben", ausgegeben);
+		this.bezeichnung = bezeichnung;
+		this.ausgegeben = ausgegeben;
+	}
 
 	public Ausruestung() {
 		//for jpa
