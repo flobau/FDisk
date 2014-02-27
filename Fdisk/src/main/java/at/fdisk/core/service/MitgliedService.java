@@ -13,7 +13,7 @@ import at.fdisk.core.domain.Mitglied;
 import at.fdisk.core.repository.MitgliedRepository;
 
 @Service
-public class MitgliedService {
+public class MitgliedService{
 
 	@Autowired
 	private MitgliedRepository mitgliedRepository;
