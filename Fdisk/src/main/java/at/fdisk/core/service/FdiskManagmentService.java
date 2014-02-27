@@ -1,6 +1,5 @@
 package at.fdisk.core.service;
 
-import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,7 @@ import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.domain.Geraet;
 import at.fdisk.core.domain.Mitglied;
+import at.fdisk.core.domain.User;
 import at.fdisk.core.repository.AusbildungRepository;
 import at.fdisk.core.repository.AusruestungRepository;
 import at.fdisk.core.repository.BerechtigungRepository;
@@ -92,9 +92,17 @@ public class FdiskManagmentService {
 				geburtsdatum, wohnort);
 		mitgliedRepository.save(mitglied);
 	}
-	
+
 	public void createNewUser(String username, String passwort,
-			String berechtigung, Mitglied mitglied){
-		berechtigungRepository.findByBerechtigung(berechtigung);
+			String berechtigung, Mitglied mitglied) {
+		Berechtigung aBerechtigung = berechtigungRepository
+				.findByBerechtigung(berechtigung);
+		if (aBerechtigung.getBerechtigung().equals(berechtigung)) {
+			Mitglied aMitglied = mitgliedRepository.findById(mitglied.getId());
+			if (aMitglied.getNachname().equals(mitglied.getNachname())) {
+				userRepository.save(new User(username, passwort, aBerechtigung,
+						aMitglied));
+			}
+		}
 	}
 }

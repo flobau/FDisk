@@ -1,7 +1,6 @@
 package at.fdisk.core.repository.impl;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -41,12 +40,11 @@ public class BerechtigungRepositoryImplTest extends
 		berechtigungRepository.save(b1);
 		berechtigungRepository.save(b2);
 		berechtigungRepository.save(b3);
-		List<Berechtigung> berechtigung = berechtigungRepository
+		Berechtigung berechtigung = berechtigungRepository
 				.findByBerechtigung(b2.getBerechtigung());
 
 		Assert.assertNotNull(berechtigung);
-		Assert.assertEquals(berechtigung.size(), 1);
-		Assert.assertEquals(berechtigung.get(0).getBerechtigung(),
+		Assert.assertEquals(berechtigung.getBerechtigung(),
 				b2.getBerechtigung());
 	}
 }

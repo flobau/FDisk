@@ -18,12 +18,12 @@ public class BerechtigungRepositoryImpl implements BerechtigungRepositoryCustom 
 	EntityManager entityManager;
 
 	@Override
-	public List<Berechtigung> findByBerechtigung(String berechtigungName) {
+	public Berechtigung findByBerechtigung(String berechtigungName) {
 		JPAQuery query = new JPAQuery(entityManager);
 		QBerechtigung berechtigung = QBerechtigung.berechtigung;
 		query.from(berechtigung).where(
 				berechtigung.berechtigungName.eq(berechtigungName));
-		return query.list(berechtigung);
+		return query.singleResult(berechtigung);
 	}
 
 	@Override
