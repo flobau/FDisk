@@ -48,10 +48,15 @@ public class Geraet  extends BasePersistable {
         this.auto = auto;
     }
     
+    public Geraet(String bezeichnung, Date pruefungstermin){
+    	EnsureService.notEmpty("bezeichnung", bezeichnung);
+    	EnsureService.notNull("pruefungstermin", pruefungstermin);
+    	this.bezeichnung = bezeichnung;
+        this.pruefungstermin = pruefungstermin;
+    }
+    
     public Geraet(){
-            bezeichnung = "Musterger�t";
-            pruefungstermin = new Date();
-            auto = new Feuerwehrauto();
+    	//required for JPA
     }
 
 

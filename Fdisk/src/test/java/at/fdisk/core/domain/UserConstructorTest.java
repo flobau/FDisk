@@ -1,6 +1,5 @@
 package at.fdisk.core.domain;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -17,31 +16,31 @@ public class UserConstructorTest {
 
 	private String username;
 	private String passwort;
-	private ArrayList<Berechtigung> berechtigungen;
+	private Berechtigung berechtigung;
 	private Mitglied mitglied;
 
 	public UserConstructorTest(String username, String passwort,
-			ArrayList<Berechtigung> berechtigungen, Mitglied mitglied) {
+			Berechtigung berechtigung, Mitglied mitglied) {
 		this.username = username;
 		this.passwort = passwort;
-		this.berechtigungen = berechtigungen;
+		this.berechtigung = berechtigung;
 		this.mitglied = mitglied;
 	}
 
 	@Parameterized.Parameters
 	public static Collection<Object[]> data() {
 		Object[][] data = new Object[][] { //
-		{ null, "*", new ArrayList<Berechtigung>(), new Mitglied() },
-				{ "", "*", new ArrayList<Berechtigung>(), new Mitglied() },
-				{ "A", null, new ArrayList<Berechtigung>(), new Mitglied() },
-				{ "A", "", new ArrayList<Berechtigung>(), new Mitglied() },
+		{ null, "*", new Berechtigung(), new Mitglied() },
+				{ "", "*", new Berechtigung(), new Mitglied() },
+				{ "A", null, new Berechtigung(), new Mitglied() },
+				{ "A", "", new Berechtigung(), new Mitglied() },
 				{ "A", "*", null, new Mitglied() },
-				{ "A", "*", new ArrayList<Berechtigung>(), null } };
+				{ "A", "*", new Berechtigung(), null } };
 		return Arrays.asList(data);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void whenCreatingWithNullArguments() {
-		new User(username, passwort, berechtigungen, mitglied);
+		new User(username, passwort, berechtigung, mitglied);
 	}
 }

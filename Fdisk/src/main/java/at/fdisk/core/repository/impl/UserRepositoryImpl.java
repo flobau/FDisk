@@ -38,7 +38,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 	public List<User> findByBerechtigung(Berechtigung berechtigung) {
 		JPAQuery query = new JPAQuery(entityManager);
 		QUser user = QUser.user;
-		query.from(user).where(user.berechtigungen.contains(berechtigung))
+		query.from(user).where(user.berechtigung.eq(berechtigung))
 				.orderBy(user.username.asc());
 		return query.list(user);
 	}

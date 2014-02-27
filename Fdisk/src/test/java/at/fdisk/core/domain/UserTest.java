@@ -5,8 +5,6 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 import at.fdisk.core.domain.Berechtigung;
@@ -17,8 +15,7 @@ public class UserTest extends AbstractDomainPersistenceTest {
 
 	@Test
 	public void testMe() {
-		User u = new User("S", "*", new ArrayList<Berechtigung>(),
-				new Mitglied());
+		User u = new User("S", "*", new Berechtigung(), new Mitglied());
 		assertThat(u.getId(), is(nullValue()));
 		entityManager().persist(u);
 		assertThat(u.getId(), is(notNullValue()));

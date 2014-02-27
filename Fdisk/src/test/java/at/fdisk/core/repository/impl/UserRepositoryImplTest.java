@@ -1,6 +1,5 @@
 package at.fdisk.core.repository.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -35,12 +34,9 @@ public class UserRepositoryImplTest extends AbstractJUnit4SpringContextTests {
 
 	@Test
 	public void testFindByBerechtigung() {
-		User u1 = new User("A", null, new ArrayList<Berechtigung>(),
-				new Mitglied());
-		User u2 = new User("B", null, new ArrayList<Berechtigung>(),
-				new Mitglied());
-		User u3 = new User("C", null, new ArrayList<Berechtigung>(),
-				new Mitglied());
+		User u1 = new User("A", null, new Berechtigung(), new Mitglied());
+		User u2 = new User("B", null, new Berechtigung(), new Mitglied());
+		User u3 = new User("C", null, new Berechtigung(), new Mitglied());
 		userRepository.save(u1);
 		userRepository.save(u2);
 		userRepository.save(u3);

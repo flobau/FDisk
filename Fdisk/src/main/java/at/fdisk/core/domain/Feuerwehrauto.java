@@ -51,8 +51,17 @@ public class Feuerwehrauto extends BasePersistable {
 		this.feuerwehr = feuerwehr;
 		this.geraete = geraete;
 	}
+	
+	public Feuerwehrauto(String typ, int sitzplaetze){
+		super();
+		EnsureService.notEmpty("typ", typ);
+		EnsureService.not0("sitzplaetze", sitzplaetze);
+		this.typ = typ;
+		this.sitzplaetze = sitzplaetze;
+	}
 
 	public Feuerwehrauto() {
+		//required for JPA
 	}
 
 	public String getTyp() {
