@@ -249,6 +249,8 @@
 					<includes>
 						<include>**/*.java</include>
 					</includes>
+					<parallel>methods</parallel>
+					<threadCount>10</threadCount>
 				</configuration>
 			</plugin>
 			<plugin>

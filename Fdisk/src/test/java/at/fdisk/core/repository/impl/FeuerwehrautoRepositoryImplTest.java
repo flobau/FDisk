@@ -17,7 +17,6 @@ import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.domain.Geraet;
 import at.fdisk.core.repository.FeuerwehrautoRepository;
-import at.fdisk.core.repositoryjpa.RepositoryTestConfiguration;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
 public class FeuerwehrautoRepositoryImplTest extends

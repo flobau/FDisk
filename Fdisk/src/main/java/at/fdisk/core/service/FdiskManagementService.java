@@ -24,8 +24,8 @@ import at.fdisk.core.repository.GeraetRepository;
 import at.fdisk.core.repository.MitgliedRepository;
 import at.fdisk.core.repository.UserRepository;
 
-@Service
-public class FdiskManagmentService {
+//@Service
+public class FdiskManagementService {
 
 	@Autowired
 	private AusbildungRepository ausbildungRepository;
@@ -45,6 +45,10 @@ public class FdiskManagmentService {
 	private MitgliedRepository mitgliedRepository;
 	@Autowired
 	private UserRepository userRepository;
+	
+	public FdiskManagementService(AusbildungRepository ausbildungRepository){
+		this.ausbildungRepository = ausbildungRepository;
+	}
 
 	public void createNewAusbildung(String bezeichnung,
 			String kurz_bezeichnung, Date startdatum, Date enddatum) {

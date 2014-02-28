@@ -27,6 +27,7 @@ public class User extends BasePersistable {
 	private String passwort;
 
 	@ManyToOne
+	@Transient
 	private Berechtigung berechtigung;
 
 	@ManyToOne

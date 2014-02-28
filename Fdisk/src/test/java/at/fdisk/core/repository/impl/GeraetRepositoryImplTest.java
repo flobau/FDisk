@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.domain.Geraet;
 import at.fdisk.core.repository.GeraetRepository;
-import at.fdisk.core.repositoryjpa.RepositoryTestConfiguration;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
 public class GeraetRepositoryImplTest extends AbstractJUnit4SpringContextTests {

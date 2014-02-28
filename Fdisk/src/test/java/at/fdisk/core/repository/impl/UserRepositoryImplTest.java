@@ -16,7 +16,6 @@ import at.fdisk.core.domain.Berechtigung;
 import at.fdisk.core.domain.Mitglied;
 import at.fdisk.core.domain.User;
 import at.fdisk.core.repository.UserRepository;
-import at.fdisk.core.repositoryjpa.RepositoryTestConfiguration;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
 public class UserRepositoryImplTest extends AbstractJUnit4SpringContextTests {
@@ -34,9 +33,9 @@ public class UserRepositoryImplTest extends AbstractJUnit4SpringContextTests {
 
 	@Test
 	public void testFindByBerechtigung() {
-		User u1 = new User("A", null, new Berechtigung(), new Mitglied());
-		User u2 = new User("B", null, new Berechtigung(), new Mitglied());
-		User u3 = new User("C", null, new Berechtigung(), new Mitglied());
+		User u1 = new User("A", "x", new Berechtigung(), new Mitglied());
+		User u2 = new User("B", "x", new Berechtigung(), new Mitglied());
+		User u3 = new User("C", "x", new Berechtigung(), new Mitglied());
 		userRepository.save(u1);
 		userRepository.save(u2);
 		userRepository.save(u3);

@@ -15,7 +15,6 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import at.fdisk.core.domain.Berechtigung;
 import at.fdisk.core.domain.User;
 import at.fdisk.core.repository.BerechtigungRepository;
-import at.fdisk.core.repositoryjpa.RepositoryTestConfiguration;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
 public class BerechtigungRepositoryImplTest extends

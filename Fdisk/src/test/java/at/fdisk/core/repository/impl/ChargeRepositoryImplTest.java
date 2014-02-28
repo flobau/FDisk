@@ -19,7 +19,6 @@ import at.fdisk.core.domain.Ausruestung;
 import at.fdisk.core.domain.Charge;
 import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.repository.ChargeRepository;
-import at.fdisk.core.repositoryjpa.RepositoryTestConfiguration;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
 public class ChargeRepositoryImplTest extends AbstractJUnit4SpringContextTests {
