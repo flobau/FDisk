@@ -154,6 +154,13 @@
 			<version>${querydsl.version}</version>
 		</dependency>
 
+		<!-- Wicket -->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-core</artifactId>
+			<version>6.14.0</version>
+		</dependency>
+
 		<!-- Web -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
