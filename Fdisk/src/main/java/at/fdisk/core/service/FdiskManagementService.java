@@ -1,6 +1,5 @@
 package at.fdisk.core.service;
 
-import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,7 @@ import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.domain.Geraet;
 import at.fdisk.core.domain.Mitglied;
+import at.fdisk.core.domain.User;
 import at.fdisk.core.repository.AusbildungRepository;
 import at.fdisk.core.repository.AusruestungRepository;
 import at.fdisk.core.repository.BerechtigungRepository;
@@ -24,8 +24,8 @@ import at.fdisk.core.repository.GeraetRepository;
 import at.fdisk.core.repository.MitgliedRepository;
 import at.fdisk.core.repository.UserRepository;
 
-@Service
-public class FdiskManagmentService {
+//@Service
+public class FdiskManagementService {
 
 	@Autowired
 	private AusbildungRepository ausbildungRepository;
@@ -45,6 +45,10 @@ public class FdiskManagmentService {
 	private MitgliedRepository mitgliedRepository;
 	@Autowired
 	private UserRepository userRepository;
+	
+	public FdiskManagementService(AusbildungRepository ausbildungRepository){
+		this.ausbildungRepository = ausbildungRepository;
+	}
 
 	public void createNewAusbildung(String bezeichnung,
 			String kurz_bezeichnung, Date startdatum, Date enddatum) {
@@ -92,9 +96,17 @@ public class FdiskManagmentService {
 				geburtsdatum, wohnort);
 		mitgliedRepository.save(mitglied);
 	}
-	
+
 	public void createNewUser(String username, String passwort,
-			String berechtigung, Mitglied mitglied){
-		berechtigungRepository.findByBerechtigung(berechtigung);
+			String berechtigung, Mitglied mitglied) {
+		Berechtigung aBerechtigung = berechtigungRepository
+				.findByBerechtigung(berechtigung);
+		if (aBerechtigung.getBerechtigung().equals(berechtigung)) {
+			Mitglied aMitglied = mitgliedRepository.findById(mitglied.getId());
+			if (aMitglied.getNachname().equals(mitglied.getNachname())) {
+				userRepository.save(new User(username, passwort, aBerechtigung,
+						aMitglied));
+			}
+		}
 	}
 }

@@ -1,7 +1,6 @@
 package at.fdisk.core.repository.impl;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,7 +15,6 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import at.fdisk.core.domain.Berechtigung;
 import at.fdisk.core.domain.User;
 import at.fdisk.core.repository.BerechtigungRepository;
-import at.fdisk.core.repositoryjpa.RepositoryTestConfiguration;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
 public class BerechtigungRepositoryImplTest extends
@@ -41,12 +39,11 @@ public class BerechtigungRepositoryImplTest extends
 		berechtigungRepository.save(b1);
 		berechtigungRepository.save(b2);
 		berechtigungRepository.save(b3);
-		List<Berechtigung> berechtigung = berechtigungRepository
+		Berechtigung berechtigung = berechtigungRepository
 				.findByBerechtigung(b2.getBerechtigung());
 
 		Assert.assertNotNull(berechtigung);
-		Assert.assertEquals(berechtigung.size(), 1);
-		Assert.assertEquals(berechtigung.get(0).getBerechtigung(),
+		Assert.assertEquals(berechtigung.getBerechtigung(),
 				b2.getBerechtigung());
 	}
 }
