@@ -27,7 +27,6 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 public class AusbildungApiTest {
 	
 	@Autowired
-	@Resource
 	private WebApplicationContext webApplicationContext;
 
 	@Test
