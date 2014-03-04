@@ -11,10 +11,10 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import at.fdisk.core.domain.DomainConfiguration;
-import at.fdisk.core.repository.RepositoryConfiguration;
+import at.fdisk.core.repositoryjpa.RepositoryJpaConfiguration;
 
 @Configuration
-@Import({ DomainConfiguration.class, RepositoryConfiguration.class })
+@Import({ DomainConfiguration.class, RepositoryJpaConfiguration.class })
 public class RepositoryTestConfiguration {
 
 	@Bean
