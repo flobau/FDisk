@@ -251,8 +251,7 @@
 					</dependency>
 				</dependencies>
 				<configuration>
-					<!-- Sets the VM argument line used when unit tests are run. -->
-					<argLine>${surefireArgLine}</argLine>
+					<!-- Sets the VM argument line used when unit tests are run. <argLine>${surefireArgLine}</argLine> -->
 					<includes>
 						<include>**/*.java</include>
 					</includes>
