@@ -14,7 +14,14 @@ public class FdiskManagementPage extends WebPage {
 		add(new Label("helloMessage", "Hello WicketWorld!"));
 		add(headerPanel = new HeaderPanel("headerPanel"));
 		add(navigationPanel = new NavigationPanel("navigationPanel"));
-		add(contentPanel = new ContentPanel("contentPanel"));
+		contentPanel = contentPanel();
+		if (contentPanel != null) {
+			add(contentPanel);
+		}
 		add(footerPanel = new FooterPanel("footerPanel"));
+	}
+
+	protected Component contentPanel() {
+		return null;
 	}
 }
