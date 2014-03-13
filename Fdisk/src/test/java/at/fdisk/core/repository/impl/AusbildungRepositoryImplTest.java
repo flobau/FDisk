@@ -17,7 +17,7 @@ import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.repository.AusbildungRepository;
 
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
-public class AusbildungsRepositoryImplTest extends
+public class AusbildungRepositoryImplTest extends
 		AbstractJUnit4SpringContextTests {
 
 	@PersistenceContext
