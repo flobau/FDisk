@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -28,6 +29,7 @@ public class BerechtigungApiTest {
 	private WebApplicationContext webApplicationContext;
 
 	@Test
+	@Order(value = 1)
 	public void readFromEmptyListOfAusruestungen() throws Exception {
 
 		MockMvc mockMvc = webAppContextSetup(webApplicationContext).build();
@@ -36,6 +38,7 @@ public class BerechtigungApiTest {
 	}
 
 	@Test
+	@Order(value = 2)
 	public void insertNewAusruestung() throws Exception {
 
 		MockMvc mockMvc = webAppContextSetup(webApplicationContext).build();

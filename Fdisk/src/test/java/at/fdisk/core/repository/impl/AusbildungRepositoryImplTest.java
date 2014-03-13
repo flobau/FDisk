@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import at.fdisk.core.domain.Ausbildung;
 import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.repository.AusbildungRepository;
 
+@Ignore
 @ContextConfiguration(classes = RepositoryTestConfiguration.class)
 public class AusbildungRepositoryImplTest extends
 		AbstractJUnit4SpringContextTests {
