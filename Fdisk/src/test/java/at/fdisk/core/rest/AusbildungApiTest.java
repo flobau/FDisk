@@ -1,11 +1,9 @@
 package at.fdisk.core.rest;
 
-import javax.annotation.Resource;
-
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -23,19 +21,22 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(loader = AnnotationConfigWebContextLoader.class, classes = RestApplicationConfig.class)
 @WebAppConfiguration
+@ContextConfiguration(loader = AnnotationConfigWebContextLoader.class, classes = at.fdisk.core.rest.RestApplicationConfig.class)
 public class AusbildungApiTest {
 
 	@Autowired
 	private WebApplicationContext webApplicationContext;
 
+	private MockMvc mockMvc;
+
+	@Before
+	public void setup() {
+		this.mockMvc = webAppContextSetup(this.webApplicationContext).build();
+	}
+
 	@Test
-	@Order(value = 2)
 	public void insertNewAusbildung() throws Exception {
-
-		MockMvc mockMvc = webAppContextSetup(webApplicationContext).build();
-
 		mockMvc.perform(
 				post("/ausbildungen")
 						.contentType(MediaType.APPLICATION_JSON)
@@ -45,11 +46,7 @@ public class AusbildungApiTest {
 	}
 
 	@Test
-	@Order(value = 1)
 	public void readFromEmptyListOfAusbildungen() throws Exception {
-
-		MockMvc mockMvc = webAppContextSetup(webApplicationContext).build();
-
 		mockMvc.perform(get("/ausbildungen")).andExpect(status().isOk());
 	}
 }

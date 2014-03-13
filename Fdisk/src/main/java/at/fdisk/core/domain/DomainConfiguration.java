@@ -10,12 +10,14 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * The domain configuration provides the JPA related stuff and where to find the
  * entities.
  */
 @Configuration
+@EnableTransactionManagement
 public class DomainConfiguration {
 
 	@Bean
@@ -36,11 +38,12 @@ public class DomainConfiguration {
 		lef.setPackagesToScan(DomainPackage.class.getPackage().getName());
 		return lef;
 	}
-	
+
 	@Bean
-    public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-        JpaTransactionManager jtm = new JpaTransactionManager();
-        jtm.setEntityManagerFactory(entityManagerFactory);
-        return jtm;
-    }
+	public JpaTransactionManager transactionManager(
+			EntityManagerFactory entityManagerFactory) {
+		JpaTransactionManager jtm = new JpaTransactionManager();
+		jtm.setEntityManagerFactory(entityManagerFactory);
+		return jtm;
+	}
 }

@@ -2,9 +2,6 @@ package at.fdisk.core.rest;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-/**
- *
- */
 public class RestWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
