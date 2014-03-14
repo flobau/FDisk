@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.stereotype.Repository;
 
 import at.fdisk.core.domain.User;
 
-@RestResource(path="/users")
+@Repository
+@RestResource(path = "/users")
 public interface UserRepository extends UserRepositoryCustom,
 		CrudRepository<User, Long> {
 
