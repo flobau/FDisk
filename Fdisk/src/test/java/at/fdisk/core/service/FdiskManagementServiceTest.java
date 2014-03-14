@@ -14,7 +14,7 @@ public class FdiskManagementServiceTest extends AbstractJUnit4SpringContextTests
 	FdiskManagementService fdiskManagementService;
 	
 	@Test
-	public void insertNewAusbildung(){
+	public void aTest(){
 		Assert.assertNotNull(fdiskManagementService);
 	}
 }
