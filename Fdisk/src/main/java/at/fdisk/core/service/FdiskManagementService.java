@@ -1,6 +1,7 @@
 package at.fdisk.core.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,5 +22,10 @@ public class FdiskManagementService {
 		Ausbildung ausbildung = new Ausbildung(bezeichnung, kurz_bezeichnung,
 				startdatum, enddatum);
 		ausbildungRepository.save(ausbildung);
+	}
+	
+	@Transactional
+	public List<Ausbildung> getAllAusbildungen(){
+		return ausbildungRepository.findAll();
 	}
 }
