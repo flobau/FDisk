@@ -5,12 +5,14 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import at.fdisk.core.domain.Berechtigung;
 import at.fdisk.core.domain.Mitglied;
 import at.fdisk.core.domain.User;
 
+@Ignore
 public class UserTest extends AbstractDomainPersistenceTest {
 
 	@Test

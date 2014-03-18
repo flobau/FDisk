@@ -5,6 +5,6 @@ import at.fdisk.core.webapp.ContentPanel;
 public class AusbildungPanel extends ContentPanel {
 	public AusbildungPanel(String id) {
 		super(id);
-		add(new AusbildungForm("teacherForm"));
+		add(new AusbildungForm("ausbildungForm"));
 	}
 }

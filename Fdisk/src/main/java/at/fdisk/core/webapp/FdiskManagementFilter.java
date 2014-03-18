@@ -8,6 +8,6 @@ import javax.servlet.annotation.WebInitParam;
 @WebFilter(value = "/web/*", initParams = {
 		@WebInitParam(name = "applicationClassName", value = "at.fdisk.core.webapp.FdiskManagementApplication"),
 		@WebInitParam(name = "filterMappingUrlPattern", value = "/web/*") })
-public class FdiskManagementFilter {
+public class FdiskManagementFilter extends WicketFilter{
 
 }

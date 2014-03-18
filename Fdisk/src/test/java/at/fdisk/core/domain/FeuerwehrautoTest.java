@@ -7,12 +7,14 @@ import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.domain.Geraet;
 
+@Ignore
 public class FeuerwehrautoTest extends AbstractDomainPersistenceTest{
 	@Test
 	public void testMe() {

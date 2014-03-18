@@ -8,6 +8,7 @@ import static org.junit.Assert.assertThat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import at.fdisk.core.domain.Ausbildung;
@@ -15,6 +16,7 @@ import at.fdisk.core.domain.Ausruestung;
 import at.fdisk.core.domain.Feuerwehr;
 import at.fdisk.core.domain.Mitglied;
 
+@Ignore
 public class MitgliedTest extends AbstractDomainPersistenceTest {
 
 	@Test

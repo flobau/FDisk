@@ -84,12 +84,12 @@ public class Ausbildung extends BasePersistable {
 		this.bezeichnung = bezeichnung;
 	}
 
-	public String getKurz_bezeichnung() {
+	public String getKurzBezeichnung() {
 		return kurzBezeichnung;
 	}
 
-	public void setKurz_bezeichnung(String kurz_bezeichnung) {
-		this.kurzBezeichnung = kurz_bezeichnung;
+	public void setKurzBezeichnung(String kurzBezeichnung) {
+		this.kurzBezeichnung = kurzBezeichnung;
 	}
 
 	public Feuerwehr getOrt() {
