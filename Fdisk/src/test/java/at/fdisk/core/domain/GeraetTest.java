@@ -7,11 +7,13 @@ import static org.junit.Assert.assertThat;
 
 import java.util.Date;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import at.fdisk.core.domain.Feuerwehrauto;
 import at.fdisk.core.domain.Geraet;
 
+@Ignore
 public class GeraetTest extends AbstractDomainPersistenceTest{
 	@Test
 	public void testMe() {

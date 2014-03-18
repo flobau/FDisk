@@ -5,13 +5,28 @@
 </head>
 <body>
 	<wicket:panel>
-		<form wicket:id="teacherForm">
-			Bezeichnung: <input type="text" wicket:id="Bezeichnung" /><br /> 
-			Kurzbezeichnung: <input type="text" wicket:id="KurzBezeichnung" /><br /> 
-			StartDate: <input type="text" wicket:id="StartDate" /><br />
-			EndDate: <input type="text" wicket:id="EndDate" /><br/> 
-			<input type="submit" value="Submit"	id="formsubmit" />
-		</form>
+		<div class="col-sm-6">
+        <form wicket:id="ausbildungForm" role="form">
+            <div class="form-group">
+                <label for="Bezeichnung"> Bezeichnung: </label>
+                <input type="text" wicket:id="Bezeichnung" class="form-control" placeholder="Bezeichnung"/>
+            </div>
+            <div class="form-group">
+                <label for="KurzBezeichnung">Kurzbezeichnung: </label>
+                <input type="text" wicket:id="KurzBezeichnung" class="form-control" placeholder="Kurzbezeichnung"/>
+            </div>
+            <div class="form-group">
+                <label for="StartDate">Start date: </label>
+                <input type="text" wicket:id="StartDate" class="form-control" placeholder="Start date"/>
+            </div>
+            <div>
+            	<label for="EndDate">End date: </label>
+            	<input type="text" wicket:id="EndDate" class="form-control" placeholder="End date"/>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            <!--<input type="submit" value="Submit" id="formsubmit"/>-->
+        </form>
+    </div>
 	</wicket:panel>
 </body>
 </html>

@@ -7,6 +7,12 @@ import org.apache.wicket.markup.html.link.Link;
 public class NavigationPanel extends Panel {
 	public NavigationPanel(String id) {
 		super(id);
+		add(new Link("navigateHelloWorld") {
+			@Override
+			public void onClick() {
+				setResponsePage(HelloWorldPage.class);
+			}
+		});
 		add(new Link("navigateAusbildung") {
 			@Override
 			public void onClick() {

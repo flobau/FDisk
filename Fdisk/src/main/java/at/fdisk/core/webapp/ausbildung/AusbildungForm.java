@@ -8,12 +8,14 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Date;
 
-/**
- *
- */
 public class AusbildungForm extends Form<Ausbildung> {
+	
+	protected final Logger logger = LoggerFactory.getLogger(getClass());
 
 	@SpringBean
 	private AusbildungRepository ausbildungRepository;
@@ -31,6 +33,6 @@ public class AusbildungForm extends Form<Ausbildung> {
 	public final void onSubmit() {
 		Ausbildung ausbildung = getModelObject();
 		ausbildungRepository.save(ausbildung);
-		System.out.println(ausbildung);
+		logger.error("Ausbildung after save: " + ausbildung);
 	}
 }
