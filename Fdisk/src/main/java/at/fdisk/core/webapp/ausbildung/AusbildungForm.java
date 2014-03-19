@@ -22,11 +22,11 @@ public class AusbildungForm extends Form<Ausbildung> {
 
 	public AusbildungForm(String id) {
 		super(id, new CompoundPropertyModel<Ausbildung>(new Ausbildung(
-				"TestAusbildung", "TA", new Date(), new Date())));
-		add(new TextField<>("Bezeichnung"));
-		add(new TextField<>("KurzBezeichnung"));
-		add(new TextField<>("StartDate"));
-		add(new TextField<>("EndDate"));
+				"Test Ausbildung", "TA", new Date(), new Date())));
+		add(new TextField<>("bezeichnung"));
+		add(new TextField<>("kurzBezeichnung"));
+		add(new TextField<>("startdatum"));
+		add(new TextField<>("enddatum"));
 	}
 
 	@Override
