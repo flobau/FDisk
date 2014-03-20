@@ -4,6 +4,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 
 import at.fdisk.core.webapp.ausbildung.AusbildungPage;
 import at.fdisk.core.webapp.ausruestung.AusruestungPage;
+import at.fdisk.core.webapp.charge.ChargePage;
 
 import org.apache.wicket.markup.html.link.Link;
 
@@ -26,6 +27,12 @@ public class NavigationPanel extends Panel {
 			@Override
 			public void onClick() {
 				setResponsePage(AusruestungPage.class);
+			}
+		});
+		add(new Link("navigateCharge"){
+			@Override
+			public void onClick() {
+				setResponsePage(ChargePage.class);
 			}
 		});
 	}

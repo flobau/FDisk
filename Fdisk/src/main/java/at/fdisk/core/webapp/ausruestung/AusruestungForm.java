@@ -27,6 +27,6 @@ public class AusruestungForm extends Form<Ausruestung> {
 	public final void onSubmit() {
 		Ausruestung ausruestung = getModelObject();
 		ausreustungRepository.save(ausruestung);
-		logger.error("Ausbildung after save: " + ausruestung);
+		logger.error("Ausruestung after save: " + ausruestung);
 	}
 }

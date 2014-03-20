@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<wicket:panel>
+	<div class="col-sm-6">
+        <form wicket:id="chargeForm" role="form">
+            <div class="form-group">
+                <label for="vorname"> Vorname: </label>
+                <input type="text" wicket:id="vorname" class="form-control" placeholder="Vorname"/>
+            </div>
+            <div class="form-group">
+                <label for="nachname">Nachname: </label>
+                <input type="text" wicket:id="nachname" class="form-control" placeholder="Nachname"/>
+            </div>
+            <div class="form-group">
+                <label for="dienstgrad"> Dienstgrad: </label>
+                <input type="text" wicket:id="dienstgrad" class="form-control" placeholder="Dienstgrad"/>
+            </div>
+            <div class="form-group">
+                <label for="gebursdatum">Geburtsdatum: </label>
+                <input type="text" wicket:id="geburtsdatum" class="form-control" placeholder="Geburtsdatum"/>
+            </div>
+            <div class="form-group">
+                <label for="wohnort"> Wohnort: </label>
+                <input type="text" wicket:id="wohnort" class="form-control" placeholder="Wohnort"/>
+            </div>
+            <div class="form-group">
+                <label for="fachgebiet">Fachgebiet: </label>
+                <input type="text" wicket:id="fachgebiet" class="form-control" placeholder="Fachgebiet"/>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            <!--<input type="submit" value="Submit" id="formsubmit"/>-->
+        </form>
+    </div>
+</wicket:panel>
+</body>
+</html>
