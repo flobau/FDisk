@@ -1,7 +1,10 @@
 package at.fdisk.core.webapp;
 
 import org.apache.wicket.markup.html.panel.Panel;
+
 import at.fdisk.core.webapp.ausbildung.AusbildungPage;
+import at.fdisk.core.webapp.ausruestung.AusruestungPage;
+
 import org.apache.wicket.markup.html.link.Link;
 
 public class NavigationPanel extends Panel {
@@ -17,6 +20,12 @@ public class NavigationPanel extends Panel {
 			@Override
 			public void onClick() {
 				setResponsePage(AusbildungPage.class);
+			}
+		});
+		add(new Link("navigateAusruestung"){
+			@Override
+			public void onClick() {
+				setResponsePage(AusruestungPage.class);
 			}
 		});
 	}
