@@ -52,4 +52,8 @@ public class ApplicationController {
     	ausbildung.setBezeichnung("testAusbildung");
     	return Results.json().render(ausbildung);
     }
+    
+    public Result ausbildungen(){
+    	return Results.html().render(new Ausbildung());
+    }
 }
