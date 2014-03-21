@@ -18,6 +18,7 @@ package controllers;
 
 import ninja.Result;
 import ninja.Results;
+import at.fdisk.core.domain.Ausbildung;
 
 import com.google.inject.Singleton;
 
@@ -44,5 +45,11 @@ public class ApplicationController {
 
         public String content;
         
+    }
+    
+    public Result test(){
+    	Ausbildung ausbildung = new Ausbildung();
+    	ausbildung.setBezeichnung("testAusbildung");
+    	return Results.json().render(ausbildung);
     }
 }
