@@ -18,42 +18,37 @@ package controllers;
 
 import ninja.Result;
 import ninja.Results;
-import at.fdisk.core.domain.Ausbildung;
 
 import com.google.inject.Singleton;
-
 
 @Singleton
 public class ApplicationController {
 
-    public Result index() {
+	public Result index() {
+		return Results.html();
+	}
 
-        return Results.html();
+	public Result ausbildungen() {
+		return Results.html();
+	}
 
-    }
-    
-    public Result helloWorldJson() {
-        
-        SimplePojo simplePojo = new SimplePojo();
-        simplePojo.content = "Hello World! Hello Json!";
-
-        return Results.json().render(simplePojo);
-
-    }
-    
-    public static class SimplePojo {
-
-        public String content;
-        
-    }
-    
-    public Result test(){
-    	Ausbildung ausbildung = new Ausbildung();
-    	ausbildung.setBezeichnung("testAusbildung");
-    	return Results.json().render(ausbildung);
-    }
-    
-    public Result ausbildungen(){
-    	return Results.html().render(new Ausbildung());
-    }
+	public Result ausruestungen() {
+		return Results.html();
+	}
+	
+	public Result feuerwehren() {
+		return Results.html();
+	}
+	
+	public Result autos() {
+		return Results.html();
+	}
+	
+	public Result geraete() {
+		return Results.html();
+	}
+	
+	public Result mitglieder() {
+		return Results.html();
+	}
 }
