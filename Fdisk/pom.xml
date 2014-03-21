@@ -192,6 +192,29 @@
 			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Ninja -->
+		<dependency>
+			<groupId>org.ninjaframework</groupId>
+			<artifactId>ninja-standalone</artifactId>
+			<version>${ninja.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ninjaframework</groupId>
+			<artifactId>ninja-test-utilities</artifactId>
+			<version>${ninja.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>tinymce-jquery</artifactId>
+			<version>3.4.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<properties>
@@ -202,6 +225,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.2.7.RELEASE</spring.version>
 		<querydsl.version>3.3.0</querydsl.version>
+		<ninja.version>3.1.2</ninja.version>
+		<jetty.version>9.1.2.v20140210</jetty.version>
 	</properties>
 
 	<build>
@@ -221,10 +246,41 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.0</version>
+				<executions>
+					<execution>
+						<id>enforce-banned-dependencies</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<bannedDependencies>
+									<excludes>
+										<exclude>commons-logging</exclude>
+									</excludes>
+								</bannedDependencies>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.6</version>
 				<configuration>
 					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<skip>true</skip>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -287,6 +343,20 @@
 				</executions>
 			</plugin>
 			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>ninja.standalone.NinjaJetty</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.4</version>
 				<configuration>
@@ -316,7 +386,37 @@
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.1.1.v20140108</version>
+				<version>${jetty.version}</version>
+				<configuration>
+					<contextPath>/</contextPath>
+					<stopKey>stop</stopKey>
+					<stopPort>8889</stopPort>
+					<scanIntervalSeconds>1</scanIntervalSeconds>
+					<reload>automatic</reload>
+					<scanTargetPatterns>
+						<scanTargetPattern>
+							<directory>target/classes</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+							<excludes>
+								<exclude>**/*.ftl.html</exclude>
+								<exclude>assets/**</exclude>
+							</excludes>
+						</scanTargetPattern>
+					</scanTargetPatterns>
+					<systemProperties>
+						<systemProperty>
+							<name>ninja.mode</name>
+							<value>dev</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.ninjaframework</groupId>
+				<artifactId>ninja-maven-plugin</artifactId>
+				<version>${ninja.version}</version>
 			</plugin>
 		</plugins>
 	</build>
