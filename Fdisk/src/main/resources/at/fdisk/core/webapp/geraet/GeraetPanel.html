@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<wicket:panel>
+	<div class="col-sm-6">
+        <form wicket:id="geraetForm" role="form">
+            <div class="form-group">
+                <label for="bezeichnung"> Bezeichnung: </label>
+                <input type="text" wicket:id="bezeichnung" class="form-control" placeholder="Bezeichnung"/>
+            </div>
+            <div class="form-group">
+                <label for="pruefungstermin">Prüfungstermin: </label>
+                <input type="text" wicket:id="pruefungstermin" class="form-control" placeholder="Prüfungstermin"/>
+            </div>
+            <div class="form-group">
+                <label for="auto">Auto: </label>
+                <input type="text" wicket:id="auto" class="form-control" placeholder="Auto"/>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            <!--<input type="submit" value="Submit" id="formsubmit"/>-->
+        </form>
+    </div>
+</wicket:panel>
+</body>
+</html>
