@@ -28,7 +28,19 @@ public class ApplicationController {
 		return Results.html();
 	}
 
-	public Result ausbildungen() {
+	public Result ausbildung() {
+		return Results.html();
+	}
+	
+	public Result ausbildungNew() {
+		return Results.html();
+	}
+	
+	public Result ausbildungShow() {
+		return Results.html();
+	}
+	
+	public Result ausbildungSubmit() {
 		return Results.html();
 	}
 
