@@ -1,4 +1,4 @@
-package at.fdisk.core.webapp.ausbildung;
+package at.fdisk.core.webapp.ausruestung;
 
 import java.util.Collections;
 import java.util.Date;
@@ -6,18 +6,17 @@ import java.util.List;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
-import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.list.PropertyListView;
 
 import at.fdisk.core.domain.Ausbildung;
 import at.fdisk.core.service.FdiskManagementService;
 import at.fdisk.core.webapp.ContentPanel;
 
-public class AllAusbildungPanel extends ContentPanel {
+public class AllAusruestungPanel extends ContentPanel {
 
 	FdiskManagementService service = new FdiskManagementService();
 
-	public AllAusbildungPanel(String id) {
+	public AllAusruestungPanel(String id) {
 		super(id);
 
 		List ausbildungList = Collections.synchronizedList(service.getAllAusbildungen());

@@ -23,9 +23,9 @@ public class FdiskManagementService {
 				startdatum, enddatum);
 		ausbildungRepository.save(ausbildung);
 	}
-	
+
 	@Transactional
-	public List<Ausbildung> getAllAusbildungen(){
+	public List<Ausbildung> getAllAusbildungen() {
 		return ausbildungRepository.findAll();
 	}
 }
