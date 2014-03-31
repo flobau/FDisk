@@ -65,48 +65,6 @@ public class NavigationPanel extends Panel {
 				setResponsePage(MitgliedPage.class);
 			}
 		});
-		add(new Link("alleAusbildungen") {
-			@Override
-			public void onClick() {
-				setResponsePage(AllAusbildungPage.class);
-			}
-		});
-		add(new Link("alleAusruestung") {
-			@Override
-			public void onClick() {
-				setResponsePage(AllAusruestungPage.class);
-			}
-		});
-		add(new Link("alleCharge") {
-			@Override
-			public void onClick() {
-				setResponsePage(AllChargePage.class);
-			}
-		});
-		add(new Link("alleFeuerwehr") {
-			@Override
-			public void onClick() {
-				setResponsePage(AllFeuerwehrPage.class);
-			}
-		});
-		add(new Link("alleFeuerwehrauto") {
-			@Override
-			public void onClick() {
-				setResponsePage(AllFeuerwehrautoPage.class);
-			}
-		});
-		add(new Link("alleGeraet") {
-			@Override
-			public void onClick() {
-				setResponsePage(AllGeraetPage.class);
-			}
-		});
-		add(new Link("alleMitglied") {
-			@Override
-			public void onClick() {
-				setResponsePage(AllMitgliedPage.class);
-			}
-		});
 		add(new Link("testing") {
 			@Override
 			public void onClick() {
