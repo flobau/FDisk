@@ -34,7 +34,6 @@ public class AusbildungForm extends Form<Ausbildung> {
 	public final void onSubmit() {
 		Ausbildung ausbildung = getModelObject();
 		ausbildungRepository.save(ausbildung);
-		logger.error("Ausbildung after save: " + ausbildung);
 		ausbildungList.add(ausbildung);
 	}
 }

@@ -3,20 +3,12 @@ package at.fdisk.core.webapp;
 import org.apache.wicket.markup.html.panel.Panel;
 
 import at.fdisk.core.webapp.ausbildung.AusbildungPage;
-import at.fdisk.core.webapp.ausbildung.AllAusbildungPage;
-import at.fdisk.core.webapp.ausruestung.AllAusruestungPage;
 import at.fdisk.core.webapp.ausruestung.AusruestungPage;
-import at.fdisk.core.webapp.charge.AllChargePage;
 import at.fdisk.core.webapp.charge.ChargePage;
-import at.fdisk.core.webapp.feuerwehr.AllFeuerwehrPage;
 import at.fdisk.core.webapp.feuerwehr.FeuerwehrPage;
-import at.fdisk.core.webapp.feuerwehrauto.AllFeuerwehrautoPage;
 import at.fdisk.core.webapp.feuerwehrauto.FeuerwehrautoPage;
-import at.fdisk.core.webapp.geraet.AllGeraetPage;
 import at.fdisk.core.webapp.geraet.GeraetPage;
-import at.fdisk.core.webapp.mitglied.AllMitgliedPage;
 import at.fdisk.core.webapp.mitglied.MitgliedPage;
-import at.fdisk.core.webapp.playground.TestPage;
 
 import org.apache.wicket.markup.html.link.Link;
 
@@ -63,12 +55,6 @@ public class NavigationPanel extends Panel {
 			@Override
 			public void onClick() {
 				setResponsePage(MitgliedPage.class);
-			}
-		});
-		add(new Link("testing") {
-			@Override
-			public void onClick() {
-				setResponsePage(TestPage.class);
 			}
 		});
 	}
