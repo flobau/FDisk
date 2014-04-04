@@ -1,5 +1,7 @@
 package at.fdisk.core.webapp.mitglied;
 
+import java.util.List;
+
 import at.fdisk.core.domain.Mitglied;
 import at.fdisk.core.repository.MitgliedRepository;
 
@@ -13,17 +15,19 @@ import org.slf4j.LoggerFactory;
 public class MitgliedForm extends Form<Mitglied> {
 	
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
+	private List<Mitglied> mitgliedList;
 
 	@SpringBean
 	private MitgliedRepository mitgliedRepository;
 
-	public MitgliedForm(String id) {
+	public MitgliedForm(String id, List<Mitglied> mitglied) {
 		super(id, new CompoundPropertyModel<Mitglied>(new Mitglied()));
 		add(new TextField<>("vorname"));
 		add(new TextField<>("nachname"));
 		add(new TextField<>("dienstgrad"));
 		add(new TextField<>("geburtsdatum"));
 		add(new TextField<>("wohnort"));
+		this.mitgliedList = mitgliedList;
 	}
 
 	@Override
@@ -31,5 +35,6 @@ public class MitgliedForm extends Form<Mitglied> {
 		Mitglied mitglied = getModelObject();
 		mitgliedRepository.save(mitglied);
 		logger.error("Mitglied after save: " + mitglied);
+		mitgliedList.add(mitglied);
 	}
 }
