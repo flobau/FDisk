@@ -43,6 +43,8 @@ public class Ausbildung extends BasePersistable {
 	@NotNull
 	@Column(name = "endatum", nullable = false)
 	private Date enddatum;
+	
+	private int key;
 
 	public Ausbildung(String bezeichnung, String kurz_bezeichnung,
 			Feuerwehr ort, Date startdatum, Date enddatum) {
@@ -70,6 +72,17 @@ public class Ausbildung extends BasePersistable {
 		this.kurzBezeichnung = kurz_bezeichnung;
 		this.startdatum = startdatum;
 		this.enddatum = enddatum;
+		this.key = 0;
+	}
+	
+	public Ausbildung(String bezeichnung, String kurz_bezeichnung,
+			Date startdatum, Date enddatum, int key) {
+		super();
+		this.bezeichnung = bezeichnung;
+		this.kurzBezeichnung = kurz_bezeichnung;
+		this.startdatum = startdatum;
+		this.enddatum = enddatum;
+		this.key = key;
 	}
 
 	public Ausbildung() {
@@ -114,5 +127,17 @@ public class Ausbildung extends BasePersistable {
 
 	public void setEnddatum(Date enddatum) {
 		this.enddatum = enddatum;
+	}
+
+	public int getKey() {
+		return key;
+	}
+
+	public void setKey(int key) {
+		this.key = key;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }

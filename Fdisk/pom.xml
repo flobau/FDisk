@@ -170,6 +170,17 @@
 			<artifactId>wicket-bootstrap</artifactId>
 			<version>0.16</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-extensions</artifactId>
+			<version>6.14.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-devutils</artifactId>
+			<version>6.14.0</version>
+		</dependency>
+
 
 		<!-- Web -->
 		<dependency>
@@ -202,11 +213,16 @@
 			<artifactId>hamcrest-library</artifactId>
 			<version>1.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.12.1.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>com.uwyn</groupId>
+			<artifactId>jhighlight</artifactId>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 

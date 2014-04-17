@@ -5,10 +5,15 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import at.fdisk.core.webapp.ausbildung.AusbildungDB;
+
 /**
  *
  */
 public class FdiskManagementApplication extends WebApplication {
+	
+	private final AusbildungDB ausbildungDB = new AusbildungDB();
+	
     @Override
     public Class<? extends Page> getHomePage() {
         return FdiskManagementPage.class;
@@ -25,4 +30,9 @@ public class FdiskManagementApplication extends WebApplication {
 
         getComponentInstantiationListeners().add(new SpringComponentInjector(this, ctx));
     }
+    
+    public AusbildungDB getAusbildungDB()
+	{
+		return ausbildungDB;
+	}
 }

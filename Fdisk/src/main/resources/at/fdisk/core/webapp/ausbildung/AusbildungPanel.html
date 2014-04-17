@@ -5,41 +5,20 @@
 </head>
 <body>
 	<wicket:panel>
-		<div class="col-sm-6">
-			<span wicket:id="ausbildungList">
-				<p>
-					<span wicket:id="bezeichnung">Bezeichnung</span><br /> 
-					<span wicket:id="kurzBezeichnung">kurzBezeichnung</span><br /> 
-					<span wicket:id="startdatum">20.4.1995</span><br />
-					<span wicket:id="enddatum">21.4.1995</span>
-				</p>
-			</span>
-		</div>
-		<div class="col-sm-6">
-			<form wicket:id="ausbildungForm" role="form">
-				<div class="form-group">
-					<label for="bezeichnung"> Bezeichnung: </label> <input type="text"
-						wicket:id="bezeichnung" class="form-control"
-						placeholder="Bezeichnung" />
-				</div>
-				<div class="form-group">
-					<label for="kurzBezeichnung">Kurzbezeichnung: </label> <input
-						type="text" wicket:id="kurzBezeichnung" class="form-control"
-						placeholder="Kurzbezeichnung" />
-				</div>
-				<div class="form-group">
-					<label for="startdatum">Start Datum: </label> <input type="text"
-						wicket:id="startdatum" class="form-control"
-						placeholder="Start Datum" />
-				</div>
-				<div>
-					<label for="enddatum">End Datum: </label> <input type="text"
-						wicket:id="enddatum" class="form-control" placeholder="End Datum" />
-				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
-				<!--<input type="submit" value="Submit" id="formsubmit"/>-->
-			</form>
-		</div>
+		<table cellspacing="0" class="dataview">
+			<tr>
+				<th>Bezeichnung</th>
+				<th>Kurzbezeichnung</th>
+				<th>Start Datum</th>
+				<th>End Datum</th>
+			</tr>
+			<tr wicket:id="simple">
+				<td><span wicket:id="bezeichnung">[bezeichnung]</span></td>
+				<td><span wicket:id="kurzBezeichnung">[kurzBezeichnung]</span></td>
+				<td><span wicket:id="startDatum">[startDatum]</span></td>
+				<td><span wicket:id="endDatum">[endDatum]</span></td>
+			</tr>
+		</table>
 	</wicket:panel>
 </body>
 </html>

@@ -3,6 +3,7 @@ package at.fdisk.core.webapp;
 import org.apache.wicket.markup.html.panel.Panel;
 
 import at.fdisk.core.webapp.ausbildung.AusbildungPage;
+import at.fdisk.core.webapp.ausbildung.NewAusbildungPage;
 import at.fdisk.core.webapp.ausruestung.AusruestungPage;
 import at.fdisk.core.webapp.charge.ChargePage;
 import at.fdisk.core.webapp.feuerwehr.FeuerwehrPage;
@@ -55,6 +56,12 @@ public class NavigationPanel extends Panel {
 			@Override
 			public void onClick() {
 				setResponsePage(MitgliedPage.class);
+			}
+		});
+		add(new Link("insertAusbildung"){
+			@Override
+			public void onClick() {
+				setResponsePage(NewAusbildungPage.class);
 			}
 		});
 	}
