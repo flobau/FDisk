@@ -27,7 +27,7 @@ public class NewAusbildungForm extends Form<Ausbildung>{
 		Ausbildung ausbildung = getModelObject();
 		getDB().save(ausbildung);
 	}
-	
+
 	protected AusbildungDB getDB(){
 		return DatabaseLocator.getDatabase();
 	}

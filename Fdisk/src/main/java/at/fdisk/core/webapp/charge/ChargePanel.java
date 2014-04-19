@@ -7,16 +7,24 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.basic.MultiLineLabel;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import at.fdisk.core.domain.Ausruestung;
 import at.fdisk.core.domain.Charge;
+import at.fdisk.core.repository.ChargeRepository;
 import at.fdisk.core.webapp.ContentPanel;
 
 public class ChargePanel extends ContentPanel {
 	private List<Charge> chargeList = new ArrayList<Charge>();
 	
+	@SpringBean
+	private ChargeRepository chargeRepository;
+	
 	public ChargePanel(String id) {
 		super(id);
+		
+		chargeList.addAll(chargeRepository.findAll());
+		
 		add(new ChargeForm("chargeForm", chargeList));
 		
 		add(new PropertyListView<Charge>("chargeList", chargeList) {

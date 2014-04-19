@@ -9,13 +9,19 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
 
 import at.fdisk.core.domain.Mitglied;
+import at.fdisk.core.repository.MitgliedRepository;
 import at.fdisk.core.webapp.ContentPanel;
 
 public class MitgliedPanel extends ContentPanel {
 	private List<Mitglied> mitgliedList = new ArrayList<>();
 
+	private MitgliedRepository mitgliedRepository;
+	
 	public MitgliedPanel(String id) {
 		super(id);
+		
+		mitgliedList.addAll(mitgliedRepository.findAll());
+		
 		add(new MitgliedForm("mitgliedForm", mitgliedList));
 
 		add(new PropertyListView<Mitglied>("mitgliedList", mitgliedList) {

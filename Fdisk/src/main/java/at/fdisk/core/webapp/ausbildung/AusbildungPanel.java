@@ -17,12 +17,12 @@ import at.fdisk.core.domain.Ausbildung;
 import at.fdisk.core.webapp.ContentPanel;
 
 public class AusbildungPanel extends ContentPanel {
-	
+
 	private final Form<?> form;
-	
+
 	public AusbildungPanel(String id) {
 		super(id);
-		
+
 		form = new Form(id);
 
 		SortableAusbildungDataProvider dp = new SortableAusbildungDataProvider();
@@ -68,7 +68,7 @@ public class AusbildungPanel extends ContentPanel {
 
 		add(dataView);
 	}
-	
+
 	private class ActionPanel extends Panel
 	{
 		public ActionPanel(String id, IModel<Ausbildung> model)

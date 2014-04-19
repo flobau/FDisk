@@ -11,9 +11,9 @@ import at.fdisk.core.webapp.ausbildung.AusbildungDB;
  *
  */
 public class FdiskManagementApplication extends WebApplication {
-	
+
 	private final AusbildungDB ausbildungDB = new AusbildungDB();
-	
+
     @Override
     public Class<? extends Page> getHomePage() {
         return FdiskManagementPage.class;
