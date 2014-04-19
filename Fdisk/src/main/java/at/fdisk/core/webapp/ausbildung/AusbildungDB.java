@@ -109,8 +109,16 @@ public class AusbildungDB {
 	public void delete(final Ausbildung ausbildung) {
 		map.remove(ausbildung.getKey());
 
-		bezeichnungIdx.remove(ausbildung);
-		bezeichnungDescIdx.remove(ausbildung);
+		for(int i = 0; i < bezeichnungIdx.size(); i++){
+			if(bezeichnungIdx.get(i).getKey() == ausbildung.getKey()){
+				bezeichnungIdx.remove(i);
+			}
+		}
+		for(int i = 0; i < bezeichnungDescIdx.size(); i++){
+			if(bezeichnungDescIdx.get(i).getKey() == ausbildung.getKey()){
+				bezeichnungDescIdx.remove(i);
+			}
+		}
 	}
 
 	private void updateIndecies() {
