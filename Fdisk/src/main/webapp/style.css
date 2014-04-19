@@ -15,9 +15,7 @@
  * limitations under the License.
  */
 body {
-	background-color: white;
-	background-image: url('wicket-bg.png');
-	background-repeat: repeat-x;
+	background-color: #F5F5F5;
 	color: black;
 	font-family: 'Tahoma', 'Lucida Sans', 'Arial', 'Helvetica', 'Sans-serif', 'sans';
 	font-size: 9pt;
@@ -123,6 +121,15 @@ th {
 	background: #C3C3C3;
 	color: white;
 	font-weight: bold;
+}
+
+tr.mine th {
+	color: black;
+}
+
+tr.mine {
+	background: #E6E6E5;
+	color: #E9601A;
 }
 
 tr.b {
