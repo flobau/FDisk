@@ -23,7 +23,8 @@ public class AusbildungPanel extends ContentPanel {
 	public AusbildungPanel(String id) {
 		super(id);
 		
-		form = new Form(id);
+		form = new Form("form");
+		add(form);
 
 		SortableAusbildungDataProvider dp = new SortableAusbildungDataProvider();
 
@@ -57,7 +58,7 @@ public class AusbildungPanel extends ContentPanel {
 		dataView.setItemsPerPage(8L);
 		dataView.setItemReuseStrategy(ReuseIfModelsEqualStrategy.getInstance());
 
-		add(new OrderByBorder("orderByBezeichnung", "bezeichnung", dp) {
+		form.add(new OrderByBorder("orderByBezeichnung", "bezeichnung", dp) {
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -66,7 +67,8 @@ public class AusbildungPanel extends ContentPanel {
 			}
 		});
 
-		add(dataView);
+		//add(dataView);
+		form.add(dataView);
 	}
 	
 	private class ActionPanel extends Panel
