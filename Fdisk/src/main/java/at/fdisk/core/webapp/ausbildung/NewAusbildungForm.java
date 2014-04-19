@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import at.fdisk.core.domain.Ausbildung;
+import at.fdisk.core.webapp.DatabaseLocator;
 
 public class NewAusbildungForm extends Form<Ausbildung>{
 
@@ -27,8 +28,8 @@ public class NewAusbildungForm extends Form<Ausbildung>{
 		Ausbildung ausbildung = getModelObject();
 		getDB().save(ausbildung);
 	}
-
+	
 	protected AusbildungDB getDB(){
-		return DatabaseLocator.getDatabase();
+		return DatabaseLocator.getAusbildungDatabase();
 	}
 }

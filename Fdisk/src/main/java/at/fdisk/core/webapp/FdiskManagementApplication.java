@@ -6,14 +6,16 @@ import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import at.fdisk.core.webapp.ausbildung.AusbildungDB;
+import at.fdisk.core.webapp.ausruestung.AusruestungDB;
 
 /**
  *
  */
 public class FdiskManagementApplication extends WebApplication {
-
+	
 	private final AusbildungDB ausbildungDB = new AusbildungDB();
-
+	private final AusruestungDB ausruestungDB = new AusruestungDB();
+	
     @Override
     public Class<? extends Page> getHomePage() {
         return FdiskManagementPage.class;
@@ -34,5 +36,10 @@ public class FdiskManagementApplication extends WebApplication {
     public AusbildungDB getAusbildungDB()
 	{
 		return ausbildungDB;
+	}
+    
+    public AusruestungDB getAusruestungDB()
+	{
+		return ausruestungDB;
 	}
 }

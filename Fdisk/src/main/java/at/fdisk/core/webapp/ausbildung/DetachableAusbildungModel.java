@@ -5,14 +5,15 @@ import java.util.Date;
 import org.apache.wicket.model.LoadableDetachableModel;
 
 import at.fdisk.core.domain.Ausbildung;
+import at.fdisk.core.webapp.DatabaseLocator;
 
 public class DetachableAusbildungModel extends LoadableDetachableModel<Ausbildung>{
 	
 	private final int key;
 	
-	protected AusbildungDB getContactsDB()
+	protected AusbildungDB getAusbildungDB()
 	{
-		return DatabaseLocator.getDatabase();
+		return DatabaseLocator.getAusbildungDatabase();
 	}
 	
 	public DetachableAusbildungModel(Ausbildung a){
@@ -28,7 +29,7 @@ public class DetachableAusbildungModel extends LoadableDetachableModel<Ausbildun
 	
 	@Override
 	protected Ausbildung load() {
-		return getContactsDB().get(key);
+		return getAusbildungDB().get(key);
 	}
 
 }

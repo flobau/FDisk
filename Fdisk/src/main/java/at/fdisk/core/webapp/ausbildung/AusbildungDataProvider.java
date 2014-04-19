@@ -7,11 +7,12 @@ import org.apache.wicket.markup.repeater.data.IDataProvider;
 import org.apache.wicket.model.IModel;
 
 import at.fdisk.core.domain.Ausbildung;
+import at.fdisk.core.webapp.DatabaseLocator;
 
 public class AusbildungDataProvider implements IDataProvider<Ausbildung>{
 	
 	protected AusbildungDB getDB(){
-		return DatabaseLocator.getDatabase();
+		return DatabaseLocator.getAusbildungDatabase();
 	}
 	
 	@Override

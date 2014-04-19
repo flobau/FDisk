@@ -7,6 +7,7 @@ import org.apache.wicket.extensions.markup.html.repeater.util.SortableDataProvid
 import org.apache.wicket.model.IModel;
 
 import at.fdisk.core.domain.Ausbildung;
+import at.fdisk.core.webapp.DatabaseLocator;
 
 public class SortableAusbildungDataProvider extends SortableDataProvider<Ausbildung, String>{
 
@@ -18,7 +19,7 @@ public class SortableAusbildungDataProvider extends SortableDataProvider<Ausbild
 	
 	protected AusbildungDB getDB()
 	{
-		return DatabaseLocator.getDatabase();
+		return DatabaseLocator.getAusbildungDatabase();
 	}
 	
 	@Override
