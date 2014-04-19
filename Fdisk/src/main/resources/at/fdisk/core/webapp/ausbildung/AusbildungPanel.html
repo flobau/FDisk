@@ -7,12 +7,14 @@
 	<wicket:panel>
 		<table cellspacing="0" class="dataview">
 			<tr>
-				<th>Bezeichnung</th>
+				<th>Actions</th>
+				<th wicket:id="orderByBezeichnung">Bezeichnung</th>
 				<th>Kurzbezeichnung</th>
 				<th>Start Datum</th>
 				<th>End Datum</th>
 			</tr>
-			<tr wicket:id="simple">
+			<tr wicket:id="ausbildungdataview">
+				<td><span wicket:id="actions">[actions]</span></td>
 				<td><span wicket:id="bezeichnung">[bezeichnung]</span></td>
 				<td><span wicket:id="kurzBezeichnung">[kurzBezeichnung]</span></td>
 				<td><span wicket:id="startDatum">[startDatum]</span></td>

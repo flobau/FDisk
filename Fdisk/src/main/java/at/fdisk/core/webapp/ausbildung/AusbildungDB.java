@@ -14,7 +14,8 @@ import at.fdisk.core.domain.Ausbildung;
 
 public class AusbildungDB {
 
-	private final Map<Long, Ausbildung> map = new HashMap<Long, Ausbildung>();
+	private final Map<Long, Ausbildung> map = Collections
+			.synchronizedMap(new HashMap<Long, Ausbildung>());
 	private final List<Ausbildung> bezeichnungIdx = Collections
 			.synchronizedList(new ArrayList<Ausbildung>());
 	private final List<Ausbildung> bezeichnungDescIdx = Collections
@@ -70,7 +71,7 @@ public class AusbildungDB {
 			return bezeichnungIdx;
 		}
 
-		if (sort.getProperty().equals("firstName")) {
+		if (sort.getProperty().equals("bezeichnung")) {
 			return sort.isAscending() ? bezeichnungIdx : bezeichnungDescIdx;
 		}
 		throw new RuntimeException("unknown sort option [" + sort
