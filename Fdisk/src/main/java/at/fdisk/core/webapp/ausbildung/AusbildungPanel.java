@@ -15,6 +15,7 @@ import org.apache.wicket.model.IModel;
 
 import at.fdisk.core.domain.Ausbildung;
 import at.fdisk.core.webapp.ContentPanel;
+import at.fdisk.core.webapp.DatabaseLocator;
 
 public class AusbildungPanel extends ContentPanel {
 	
@@ -67,7 +68,6 @@ public class AusbildungPanel extends ContentPanel {
 			}
 		});
 
-		//add(dataView);
 		form.add(dataView);
 	}
 	
@@ -83,7 +83,7 @@ public class AusbildungPanel extends ContentPanel {
 				{
 					Ausbildung ausbildung = (Ausbildung)ActionPanel.this.getDefaultModelObject();
 					info("Removed Ausbildung " + ausbildung);
-					DatabaseLocator.getDatabase().delete(ausbildung);
+					DatabaseLocator.getAusbildungDatabase().delete(ausbildung);
 				}
 			};
 			removeLink.setDefaultFormProcessing(false);

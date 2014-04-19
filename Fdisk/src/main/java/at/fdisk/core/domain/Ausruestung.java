@@ -1,6 +1,5 @@
 package at.fdisk.core.domain;
 
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,26 +16,27 @@ import at.fdisk.core.EnsureService;
 
 @Entity
 @Table(name = "ausruestung")
-public class Ausruestung  extends BasePersistable {
+public class Ausruestung extends BasePersistable {
 
 	private static final long serialVersionUID = -5590879199470794514L;
-	
+
 	@Size(max = 30)
 	@NotNull
 	@Column(name = "bezeichnung", nullable = false, length = 30)
 	private String bezeichnung;
-	
+
 	@ManyToOne
 	@Transient
 	private Mitglied benutzer;
-	
+
 	@Temporal(TemporalType.DATE)
 	@NotNull
 	@Column(name = "datum_ausgegeben", nullable = false)
 	private Date ausgegeben;
 
-	public Ausruestung(String bezeichnung, Mitglied benutzer,
-			Date ausgegeben) {
+	private int key;
+
+	public Ausruestung(String bezeichnung, Mitglied benutzer, Date ausgegeben) {
 		super();
 		EnsureService.notEmpty("bezeichnung", bezeichnung);
 		EnsureService.notNull("benutzer", benutzer);
@@ -45,8 +45,8 @@ public class Ausruestung  extends BasePersistable {
 		this.benutzer = benutzer;
 		this.ausgegeben = ausgegeben;
 	}
-	
-	public Ausruestung(String bezeichnung, Date ausgegeben){
+
+	public Ausruestung(String bezeichnung, Date ausgegeben) {
 		super();
 		EnsureService.notEmpty("bezeichnung", bezeichnung);
 		EnsureService.notNull("ausgegeben", ausgegeben);
@@ -54,8 +54,15 @@ public class Ausruestung  extends BasePersistable {
 		this.ausgegeben = ausgegeben;
 	}
 
+	public Ausruestung(String bezeichnung, Date ausgegeben, int key) {
+		super();
+		this.bezeichnung = bezeichnung;
+		this.ausgegeben = ausgegeben;
+		this.key = key;
+	}
+
 	public Ausruestung() {
-		//for jpa
+		// for jpa
 	}
 
 	public String getBezeichnung() {
@@ -82,4 +89,15 @@ public class Ausruestung  extends BasePersistable {
 		this.ausgegeben = ausgegeben;
 	}
 
+	public int getKey() {
+		return key;
+	}
+
+	public void setKey(int key) {
+		this.key = key;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 }
