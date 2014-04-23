@@ -1,7 +1,5 @@
 package at.fdisk.core.webapp.ausruestung;
 
-import java.util.Date;
-
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.CompoundPropertyModel;
