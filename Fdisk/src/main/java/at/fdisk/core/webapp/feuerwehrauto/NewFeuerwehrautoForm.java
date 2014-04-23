@@ -16,7 +16,7 @@ public class NewFeuerwehrautoForm extends Form<Feuerwehrauto>{
 	public NewFeuerwehrautoForm(String id) {
 		super(id, new CompoundPropertyModel<Feuerwehrauto>(new Feuerwehrauto()));
 		add(new TextField<>("typ"));
-		add(new TextField<>("plaetze"));
+		add(new TextField<>("sitzplaetze"));
 	}
 
 	@Override

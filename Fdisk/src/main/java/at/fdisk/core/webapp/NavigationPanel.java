@@ -7,6 +7,7 @@ import at.fdisk.core.webapp.ausbildung.NewAusbildungPage;
 import at.fdisk.core.webapp.ausruestung.AusruestungPage;
 import at.fdisk.core.webapp.ausruestung.NewAusruestungPage;
 import at.fdisk.core.webapp.feuerwehrauto.FeuerwehrautoPage;
+import at.fdisk.core.webapp.feuerwehrauto.NewFeuerwehrautoPage;
 import at.fdisk.core.webapp.geraet.GeraetPage;
 import at.fdisk.core.webapp.mitglied.MitgliedPage;
 
@@ -55,6 +56,12 @@ public class NavigationPanel extends Panel {
 			@Override
 			public void onClick(){
 				setResponsePage(NewAusruestungPage.class);
+			}
+		});
+		add(new Link("insertFeuerwehrauto"){
+			@Override
+			public void onClick() {
+				setResponsePage(NewFeuerwehrautoPage.class);
 			}
 		});
 	}
