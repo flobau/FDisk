@@ -6,8 +6,6 @@ import at.fdisk.core.webapp.ausbildung.AusbildungPage;
 import at.fdisk.core.webapp.ausbildung.NewAusbildungPage;
 import at.fdisk.core.webapp.ausruestung.AusruestungPage;
 import at.fdisk.core.webapp.ausruestung.NewAusruestungPage;
-import at.fdisk.core.webapp.charge.ChargePage;
-import at.fdisk.core.webapp.feuerwehr.FeuerwehrPage;
 import at.fdisk.core.webapp.feuerwehrauto.FeuerwehrautoPage;
 import at.fdisk.core.webapp.geraet.GeraetPage;
 import at.fdisk.core.webapp.mitglied.MitgliedPage;
@@ -27,18 +25,6 @@ public class NavigationPanel extends Panel {
 			@Override
 			public void onClick() {
 				setResponsePage(AusruestungPage.class);
-			}
-		});
-		add(new Link("navigateCharge") {
-			@Override
-			public void onClick() {
-				setResponsePage(ChargePage.class);
-			}
-		});
-		add(new Link("navigateFeuerwehr") {
-			@Override
-			public void onClick() {
-				setResponsePage(FeuerwehrPage.class);
 			}
 		});
 		add(new Link("navigateFeuerwehrauto") {
