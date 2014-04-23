@@ -38,6 +38,8 @@ public class Feuerwehrauto extends BasePersistable {
 	
 	@OneToMany
 	private Collection<Geraet> geraete;
+	
+	private int key;
 
 	public Feuerwehrauto(String typ, int sitzplaetze, Feuerwehr feuerwehr,
 			Collection<Geraet> geraete) {
@@ -58,6 +60,13 @@ public class Feuerwehrauto extends BasePersistable {
 		EnsureService.not0("sitzplaetze", sitzplaetze);
 		this.typ = typ;
 		this.sitzplaetze = sitzplaetze;
+	}
+	
+	public Feuerwehrauto(String typ, int sitzplaetze, int key){
+		super();
+		this.typ = typ;
+		this.sitzplaetze = sitzplaetze;
+		this.key = key;
 	}
 
 	public Feuerwehrauto() {
@@ -96,4 +105,11 @@ public class Feuerwehrauto extends BasePersistable {
 		this.geraete = geraete;
 	}
 
+	public int getKey() {
+		return key;
+	}
+	
+	public void setKey(int key){
+		this.key = key;
+	}
 }

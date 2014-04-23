@@ -25,7 +25,6 @@ public class FeuerwehrautoForm extends Form<Feuerwehrauto> {
 		super(id, new CompoundPropertyModel<Feuerwehrauto>(new Feuerwehrauto()));
 		add(new TextField<>("typ"));
 		add(new TextField<>("sitzplaetze"));
-		add(new TextField<>("feuerwehr"));
 		this.feuerwehrautoList = feuerwehrautoList;
 	}
 

@@ -7,6 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import at.fdisk.core.webapp.ausbildung.AusbildungDB;
 import at.fdisk.core.webapp.ausruestung.AusruestungDB;
+import at.fdisk.core.webapp.feuerwehrauto.FeuerwehrautoDB;
 
 /**
  *
@@ -15,6 +16,7 @@ public class FdiskManagementApplication extends WebApplication {
 	
 	private final AusbildungDB ausbildungDB = new AusbildungDB();
 	private final AusruestungDB ausruestungDB = new AusruestungDB();
+	private final FeuerwehrautoDB feuerwehrautoDB = new FeuerwehrautoDB();
 	
     @Override
     public Class<? extends Page> getHomePage() {
@@ -42,4 +44,8 @@ public class FdiskManagementApplication extends WebApplication {
 	{
 		return ausruestungDB;
 	}
+    
+    public FeuerwehrautoDB getFeuerwehrautoDB(){
+    	return feuerwehrautoDB;
+    }
 }

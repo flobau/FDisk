@@ -5,34 +5,20 @@
 </head>
 <body>
 	<wicket:panel>
-		<div class="col-sm-6">
-			<span wicket:id="feuerwehrautoList">
-				<p>
-					<span wicket:id="typ">Typ</span><br /> <span
-						wicket:id="sitzplaetze">10</span><br /> <span
-						wicket:id="feuerwehr">Feuerwehr</span>
-				</p>
-			</span>
-		</div>
-		<div class="col-sm-6">
-			<form wicket:id="feuerwehrautoForm" role="form">
-				<div class="form-group">
-					<label for="typ"> Typ: </label> <input type="text" wicket:id="typ"
-						class="form-control" placeholder="Typ" />
-				</div>
-				<div class="form-group">
-					<label for="sitzplaetze">Sitzpl&aumltze: </label> <input
-						type="text" wicket:id="sitzplaetze" class="form-control"
-						placeholder="Sitzpl&aumltze" />
-				</div>
-				<div class="form-group">
-					<label for="feuerwehr">Feuerwehr: </label> <input type="text"
-						wicket:id="feuerwehr" class="form-control" placeholder="Feuerwehr" />
-				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
-				<!--<input type="submit" value="Submit" id="formsubmit"/>-->
-			</form>
-		</div>
+		<form wicket:id="form">
+		<table cellspacing="0" class="dataview">
+			<tr>
+				<th>Actions</th>
+				<th wicket:id="orderByTyp">Typ</th>
+				<th>Sitzplaetze</th>
+			</tr>
+			<tr wicket:id="feuerwehrautoDataView">
+				<td><span wicket:id="actions">[actions]</span></td>
+				<td><span wicket:id="typ">[typ]</span></td>
+				<td><span wicket:id="sitzplaetze">[sitzplaetze]</span></td>
+			</tr>
+		</table>
+		</form>
 	</wicket:panel>
 </body>
 </html>
