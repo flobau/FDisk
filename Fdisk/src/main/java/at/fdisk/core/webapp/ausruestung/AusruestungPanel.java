@@ -39,7 +39,6 @@ public class AusruestungPanel extends ContentPanel {
 				Ausruestung ausruestung = item.getModelObject();
 				item.add(new ActionPanel("actions", item.getModel()));
 				item.add(new Label("bezeichnung", ausruestung.getBezeichnung()));
-				item.add(new Label("benutzer", ausruestung.getBenutzer()));
 				item.add(new Label("ausgegeben", ausruestung.getAusgegeben()));
 				
 				item.add(AttributeModifier.replace("class", new AbstractReadOnlyModel<String>() {

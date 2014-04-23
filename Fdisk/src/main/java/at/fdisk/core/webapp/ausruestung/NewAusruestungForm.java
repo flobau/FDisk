@@ -16,7 +16,6 @@ public class NewAusruestungForm extends Form<Ausruestung>{
 	public NewAusruestungForm(String id) {
 		super(id, new CompoundPropertyModel<Ausruestung>(new Ausruestung()));
 		add(new TextField<>("bezeichnung"));
-		add(new TextField<>("benutzer"));
 		add(new TextField<>("ausgegeben"));
 	}
 
