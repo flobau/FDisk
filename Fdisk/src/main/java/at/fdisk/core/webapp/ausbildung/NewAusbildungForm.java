@@ -16,7 +16,7 @@ public class NewAusbildungForm extends Form<Ausbildung>{
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
 
 	public NewAusbildungForm(String id) {
-		super(id, new CompoundPropertyModel<Ausbildung>(new Ausbildung("Test", "T", new Date(), new Date())));
+		super(id, new CompoundPropertyModel<Ausbildung>(new Ausbildung()));
 		add(new TextField<>("bezeichnung"));
 		add(new TextField<>("kurzBezeichnung"));
 		add(new TextField<>("startdatum"));

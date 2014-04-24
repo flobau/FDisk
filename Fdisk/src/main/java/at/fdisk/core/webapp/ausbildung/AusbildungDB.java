@@ -28,8 +28,6 @@ public class AusbildungDB {
 	 *            number of contacts to generate at startup
 	 */
 	public AusbildungDB() {
-		add(new Ausbildung("Test", "T", new Date(), new Date(), 1));
-		add(new Ausbildung("Test2", "T2", new Date(), new Date(), 2));
 		updateIndecies();
 	}
 
