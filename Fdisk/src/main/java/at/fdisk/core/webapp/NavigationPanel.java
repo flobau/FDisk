@@ -9,6 +9,7 @@ import at.fdisk.core.webapp.ausruestung.NewAusruestungPage;
 import at.fdisk.core.webapp.feuerwehrauto.FeuerwehrautoPage;
 import at.fdisk.core.webapp.feuerwehrauto.NewFeuerwehrautoPage;
 import at.fdisk.core.webapp.geraet.GeraetPage;
+import at.fdisk.core.webapp.geraet.NewGeraetPage;
 import at.fdisk.core.webapp.mitglied.MitgliedPage;
 
 import org.apache.wicket.markup.html.link.Link;
@@ -62,6 +63,12 @@ public class NavigationPanel extends Panel {
 			@Override
 			public void onClick() {
 				setResponsePage(NewFeuerwehrautoPage.class);
+			}
+		});
+		add(new Link("insertGeraet"){
+			@Override
+			public void onClick() {
+				setResponsePage(NewGeraetPage.class);
 			}
 		});
 	}

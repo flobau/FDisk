@@ -15,73 +15,86 @@ import javax.validation.constraints.Size;
 import at.fdisk.core.EnsureService;
 
 /**
- * User: Stefan
- * Date: 12.09.13
- * Time: 17:45
+ * User: Stefan Date: 12.09.13 Time: 17:45
  */
 @Entity
 @Table(name = "geraet")
-public class Geraet  extends BasePersistable {
+public class Geraet extends BasePersistable {
 
 	private static final long serialVersionUID = 9186456843145873233L;
-	
+
 	@Size(max = 30)
 	@NotNull
 	@Column(name = "bezeichnung", nullable = false, length = 30)
 	private String bezeichnung;
-	
+
 	@Temporal(TemporalType.DATE)
 	@NotNull
 	@Column(name = "pruefungstermin", nullable = false)
-    private Date pruefungstermin;
-    
+	private Date pruefungstermin;
+
 	@ManyToOne
 	@Transient
-    private Feuerwehrauto auto;
+	private Feuerwehrauto auto;
+	
+	private int key;
 
-    public Geraet(String bezeichnung, Date pruefungstermin, Feuerwehrauto auto){
-    	EnsureService.notEmpty("bezeichnung", bezeichnung);
-    	EnsureService.notNull("pruefungstermin", pruefungstermin);
-    	EnsureService.notNull("auto", auto);
-        this.bezeichnung = bezeichnung;
-        this.pruefungstermin = pruefungstermin;
-        this.auto = auto;
-    }
-    
-    public Geraet(String bezeichnung, Date pruefungstermin){
-    	EnsureService.notEmpty("bezeichnung", bezeichnung);
-    	EnsureService.notNull("pruefungstermin", pruefungstermin);
-    	this.bezeichnung = bezeichnung;
-        this.pruefungstermin = pruefungstermin;
-    }
-    
-    public Geraet(){
-    	//required for JPA
-    }
+	public Geraet(String bezeichnung, Date pruefungstermin, Feuerwehrauto auto) {
+		EnsureService.notEmpty("bezeichnung", bezeichnung);
+		EnsureService.notNull("pruefungstermin", pruefungstermin);
+		EnsureService.notNull("auto", auto);
+		this.bezeichnung = bezeichnung;
+		this.pruefungstermin = pruefungstermin;
+		this.auto = auto;
+	}
 
+	public Geraet(String bezeichnung, Date pruefungstermin) {
+		EnsureService.notEmpty("bezeichnung", bezeichnung);
+		EnsureService.notNull("pruefungstermin", pruefungstermin);
+		this.bezeichnung = bezeichnung;
+		this.pruefungstermin = pruefungstermin;
+	}
 
-    public String getBezeichnung() {
-        return bezeichnung;
-    }
+	public Geraet() {
+		// required for JPA
+	}
+	
+	public Geraet(String bezeichnung, Date pruefungstermin, int key) {
+		this.bezeichnung = bezeichnung;
+		this.pruefungstermin = pruefungstermin;
+		this.key = key;
+	}
 
-    public Date getPruefungstermin() {
-        return pruefungstermin;
-    }
+	public String getBezeichnung() {
+		return bezeichnung;
+	}
 
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
-    }
+	public Date getPruefungstermin() {
+		return pruefungstermin;
+	}
 
-    public void setPruefungstermin(Date pruefungstermin) {
-        this.pruefungstermin = pruefungstermin;
-    }
+	public void setBezeichnung(String bezeichnung) {
+		this.bezeichnung = bezeichnung;
+	}
 
-        public Feuerwehrauto getAuto() {
-                return auto;
-        }
+	public void setPruefungstermin(Date pruefungstermin) {
+		this.pruefungstermin = pruefungstermin;
+	}
 
-        public void setAuto(Feuerwehrauto auto) {
-                this.auto = auto;
-        }
-    
+	public Feuerwehrauto getAuto() {
+		return auto;
+	}
+
+	public void setAuto(Feuerwehrauto auto) {
+		this.auto = auto;
+	}
+
+	public int getKey() {
+		return key;
+	}
+
+	public void setKey(int key) {
+		this.key = key;
+	}
+
 }

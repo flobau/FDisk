@@ -5,6 +5,7 @@ import org.apache.wicket.Application;
 import at.fdisk.core.webapp.ausbildung.AusbildungDB;
 import at.fdisk.core.webapp.ausruestung.AusruestungDB;
 import at.fdisk.core.webapp.feuerwehrauto.FeuerwehrautoDB;
+import at.fdisk.core.webapp.geraet.GeraetDB;
 
 public class DatabaseLocator
 {
@@ -26,5 +27,10 @@ public class DatabaseLocator
 	public static FeuerwehrautoDB getFeuerwehrautoDatabase(){
 		FdiskManagementApplication app = (FdiskManagementApplication)Application.get();
 		return app.getFeuerwehrautoDB();
+	}
+	
+	public static GeraetDB getGeraetDatabase(){
+		FdiskManagementApplication app = (FdiskManagementApplication)Application.get();
+		return app.getGeraetDB();
 	}
 }
