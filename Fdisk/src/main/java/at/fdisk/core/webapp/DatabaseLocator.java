@@ -6,6 +6,7 @@ import at.fdisk.core.webapp.ausbildung.AusbildungDB;
 import at.fdisk.core.webapp.ausruestung.AusruestungDB;
 import at.fdisk.core.webapp.feuerwehrauto.FeuerwehrautoDB;
 import at.fdisk.core.webapp.geraet.GeraetDB;
+import at.fdisk.core.webapp.mitglied.MitgliedDB;
 
 public class DatabaseLocator
 {
@@ -32,5 +33,10 @@ public class DatabaseLocator
 	public static GeraetDB getGeraetDatabase(){
 		FdiskManagementApplication app = (FdiskManagementApplication)Application.get();
 		return app.getGeraetDB();
+	}
+	
+	public static MitgliedDB getMitgliedDatabase(){
+		FdiskManagementApplication app = (FdiskManagementApplication)Application.get();
+		return app.getMitgliedDB();
 	}
 }

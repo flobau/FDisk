@@ -5,45 +5,26 @@
 </head>
 <body>
 	<wicket:panel>
-		<div class="col-sm-6">
-			<span wicket:id="mitgliedList">
-				<p>
-					<span wicket:id="vorname">Vorname</span><br /> <span
-						wicket:id="nachname">Nachname</span><br /> <span
-						wicket:id="dienstgrad">FM</span><br /> <span
-						wicket:id="geburtsdatum">21.4.1995</span><br /> <span
-						wicket:id="wohnort">PKDF</span>
-				</p>
-			</span>
-		</div>
-		<div class="col-sm-6">
-			<form wicket:id="mitgliedForm" role="form">
-				<div class="form-group">
-					<label for="vorname"> Vorname: </label> <input type="text"
-						wicket:id="vorname" class="form-control" placeholder="Vorname" />
-				</div>
-				<div class="form-group">
-					<label for="nachname">Nachname: </label> <input type="text"
-						wicket:id="nachname" class="form-control" placeholder="Nachname" />
-				</div>
-				<div class="form-group">
-					<label for="dienstgrad"> Dienstgrad: </label> <input type="text"
-						wicket:id="dienstgrad" class="form-control"
-						placeholder="Dienstgrad" />
-				</div>
-				<div class="form-group">
-					<label for="gebursdatum">Geburtsdatum: </label> <input type="text"
-						wicket:id="geburtsdatum" class="form-control"
-						placeholder="Geburtsdatum" />
-				</div>
-				<div class="form-group">
-					<label for="wohnort"> Wohnort: </label> <input type="text"
-						wicket:id="wohnort" class="form-control" placeholder="Wohnort" />
-				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
-				<!--<input type="submit" value="Submit" id="formsubmit"/>-->
-			</form>
-		</div>
+		<form wicket:id="form">
+		<table cellspacing="0" class="dataview">
+			<tr>
+				<th>Actions</th>
+				<th>Vorname</th>
+				<th wicket:id="orderByTyp">Nachname</th>
+				<th>Dienstgrad</th>
+				<th>Geburtsdatum</th>
+				<th>Wohnort</th>
+			</tr>
+			<tr wicket:id="geraetDataView">
+				<td><span wicket:id="actions">[actions]</span></td>
+				<td><span wicket:id="vorname">[typ]</span></td>
+				<td><span wicket:id="nachname">[pruefungstermin]</span></td>
+				<td><span wicket:id="dienstgrad">[pruefungstermin]</span></td>
+				<td><span wicket:id="geburtsdatum">[pruefungstermin]</span></td>
+				<td><span wicket:id="wohnort">[pruefungstermin]</span></td>
+			</tr>
+		</table>
+		</form>
 	</wicket:panel>
 </body>
 </html>

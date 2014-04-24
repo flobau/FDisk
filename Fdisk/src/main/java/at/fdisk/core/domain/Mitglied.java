@@ -60,6 +60,8 @@ public class Mitglied extends BasePersistable {
 	
 	@OneToMany
 	private Collection<Ausbildung> ausbildung;
+	
+	private int key;
 
 	public Mitglied() {
 		//for jpa
@@ -164,5 +166,13 @@ public class Mitglied extends BasePersistable {
 
 	public void setKurse(Collection<Ausbildung> ausbildung) {
 		this.ausbildung = ausbildung;
+	}
+	
+	public int getKey() {
+		return key;
+	}
+	
+	public void setKey(int key) {
+		this.key = key;
 	}
 }

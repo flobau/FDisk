@@ -9,6 +9,7 @@ import at.fdisk.core.webapp.ausbildung.AusbildungDB;
 import at.fdisk.core.webapp.ausruestung.AusruestungDB;
 import at.fdisk.core.webapp.feuerwehrauto.FeuerwehrautoDB;
 import at.fdisk.core.webapp.geraet.GeraetDB;
+import at.fdisk.core.webapp.mitglied.MitgliedDB;
 
 /**
  *
@@ -19,6 +20,7 @@ public class FdiskManagementApplication extends WebApplication {
 	private final AusruestungDB ausruestungDB = new AusruestungDB();
 	private final FeuerwehrautoDB feuerwehrautoDB = new FeuerwehrautoDB();
 	private final GeraetDB geraetDB = new GeraetDB();
+	private final MitgliedDB mitgliedDB = new MitgliedDB();
 
 	@Override
 	public Class<? extends Page> getHomePage() {
@@ -52,5 +54,9 @@ public class FdiskManagementApplication extends WebApplication {
 
 	public GeraetDB getGeraetDB() {
 		return geraetDB;
+	}
+	
+	public MitgliedDB getMitgliedDB() {
+		return mitgliedDB;
 	}
 }
